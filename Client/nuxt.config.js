@@ -4,7 +4,12 @@ export default {
     title: 'Client',
     script: [
       {
-        src: '~/assets/js/jquery.min.js'
+        src: '~/assets/js/jquery.min.js',
+        type: 'text/javascript'
+      },
+      {
+        src: '~/assets/js/jquery.slim.min.js',
+        type: 'text/javascript'
       },
       {
         src: '~/assets/js/popper.min.js'
@@ -26,8 +31,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: '/css/style.css' },
       { rel: 'stylesheet', href: '/css/bootstrap.min.css' },
+      { rel: 'stylesheet', href: '/css/bootstrap.bundle.min.css' },
       { rel: 'stylesheet', href: '/css/responsive.css' },
-      { rel: 'stylesheet', href: '/css/jquery.mCustomScrollbar.min.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' },
     ]
   },
