@@ -1,30 +1,48 @@
 <template>
     <div>
-    <carousel-3d>
-  <slide :index="0">
-    Slide 1 Content
-  </slide>
-  <slide :index="1">
-    Slide 2 Content
-  </slide>
-  <slide :index="2">
-    Slide 1 Content
-  </slide>
-  <slide :index="3">
-    Slide 2 Content
-  </slide>
-  <slide :index="4">
-    Slide 1 Content
-  </slide>
-  <slide :index="5"> 
-    Slide 2 Content
-  </slide>
-  <slide :index="6">
-    Slide 1 Content
-  </slide>
-  <slide :index="7">
-    Slide 2 Content
-  </slide>
-</carousel-3d>
+    <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+                <img src="http://placehold.it/150x50?text=Logo" alt="">
+              </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showNavbarContent: false
+    }
+  },
+  methods: {
+    switchNavbarContent(){
+      this.showNavbarContent = true;
+    }
+  },
+}
+</script>
