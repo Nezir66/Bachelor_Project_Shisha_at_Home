@@ -4,6 +4,7 @@
       <div class="row">
         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
+          <div v-if="$store.state.auth.loggedIn == true">
           <div class="profil fontColor" v-if="switchToChangeData == false">
             <h1 style="color: white;">Profil</h1>
             <hr />
@@ -99,6 +100,10 @@
             <br />
             <a class="link" href="#" @click="deleteUser()">Benutzer Löschen</a>
             <p class="mt-2 mb-1 text-muted">© 2020</p>
+          </div>
+          </div>
+          <div v-else>
+            <h1 style="color: white; text-align: center;">Nicht Angemeldet</h1>
           </div>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
