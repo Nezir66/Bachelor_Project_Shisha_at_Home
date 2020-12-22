@@ -1,8 +1,6 @@
 <template>
      <body class="main-layout">
-   
    <div class="wrapper">
-
       <div id="content">
          <navbar>
             <section>
@@ -15,6 +13,9 @@
                      <div class="logo"> <router-link to="/Transaction/Offer/products" href="#"><img src="/images/Logo_Shisha_at_Home.png" height="220" width="750" alt="Logo vom Unternehmen" class="img-responsive"></router-link> </div>
                      <div class="button_section_red">
                         <router-link to="/Transaction/Offer/products" href="#">Jetzt bestellen</router-link>
+                        <div v-if="$store.state.auth.loggedIn == true">
+                           <router-link to="/Admin/addNewProducts" v-if="$store.state.auth.user.name == 'Admin'">Go Admin</router-link>
+                        </div>     
                      </div>
                   </div>
                </div>
@@ -120,7 +121,7 @@
               </div>
               <div class="col-md-12 margin_top_30">
                 <div class="full center button_section_red margin_top_30">
-                    <router-link to="/Transaction/tutorial" class="margin_top_30" href="#">Mehr Erfrahren</router-link>
+                    <router-link to="/Transaction/tutorial" href="#">Mehr Erfrahren</router-link>
                   </div>
               </div>
            </div>
@@ -175,7 +176,7 @@
              </div>
            </div>
            <div class="row">
-              <div class="col-md-6">
+              <div class="contact col-md-6">
                  <div class="full">
                     <div class="contact_form">
                         <form>
@@ -187,7 +188,7 @@
                           </div>
                           <div class="col-md-12">
                             <div class="full field">
-                              <input type="email" placeholder="Email" name="email" />
+                              <input type="email" placeholder="E-mail" name="email" />
                             </div>
                           </div>
                             <div class="col-md-12">
@@ -214,84 +215,6 @@
         </div>
       </section>
       <!-- end section -->
-
-      <!-- footer -->
-      <footer>
-         <div class="container">
-           <div class="row">
-              <div class="col-md-6">
-                <div class="full">
-                  <div class="logo"> <a href="#home"><img src="/images/Logo_Shisha_at_Home.png" height="80" width="180" alt="Logo vom Unternehmen"></a> </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="full">
-                   <ul class="social_links">
-                      <li><a href="https://www.facebook.com/"><i class="fa fa-facebook-f"></i></a></li>
-                      <li><a href="https://twitter.com/?lang=de"><i class="fa fa-twitter"></i></a></li>
-                      <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                   </ul>
-                </div>
-              </div>
-              <div class="col-md-4">
-                 <div class="full">
-                    <h4 class="widget_heading">SUBSCRIBE</h4>
-                 </div>
-                 <div class="full subribe_form">
-                    <form>
-                      <fieldset>
-                         <div class="field">
-                           <input type="email" name="mail" placeholder="E-mail" />
-                         </div>
-                         <div class="field">
-                           <button class="submit_bt">Bestätigen</button>
-                         </div>
-                      </fieldset>
-                    </form>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                 <div class="full">
-                   <h4 class="widget_heading">Links</h4>
-                 </div>
-                 <div class="full f_menu">
-                    <ul>
-                       <li><a href="#home">Home</a></li>
-                       <li><router-link to="/Transaction/Offer/products" href="#">Angebot</router-link></li>
-                       <li><router-link to="/Transaction/tutorial" href="#">Ablauf</router-link></li>
-                       <li><a href="#testimonial">Wer sind wir</a></li>
-                    </ul>
-                 </div>
-              </div>
-              <div class="col-md-4">
-                 <div class="full">
-                   <h4 class="widget_heading">Kontakt Daten</h4>
-                   <div class="full cont_footer">
-                     <p><strong>Shisha@Home</strong><br><br>Oswald-Redlich-Straße 36, Wien<br>Tel.: +43676-911-607-3<br>Nezirbasar@outlook.com</p>
-                   </div>
-                 </div>
-              </div>
-           </div>
-         </div>
-      </footer>
-      <!-- end footer -->
-
-      <!-- copyright -->
-
-      <div class="cpy_right">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-12">
-                     <div class="full">
-                        <p>© 2020 All Rights Reserved. Design by <a href="#">Nezir Basar</a></p>
-                     </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-
-      <!-- right copyright -->
-
    </div>
 </div>
    </body>
@@ -314,10 +237,10 @@ export default {
       }
    },
   created() {
-    if (this.$store.state.login == false) {
-      this.$store.commit("changeLogToTrue");
-      this.$router.go(0);
-    }
+      if (this.$store.state.login == false && this.$store.state.auth.loggedIn == true) {
+         this.$store.commit("changeLogToTrue");
+         this.$router.go(0);
+      }
   },
   mounted() {
     this.$store.commit("changeLogToFalse");
