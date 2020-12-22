@@ -53,11 +53,10 @@
       <div class="totals-value-product" id="cart-tax">{{ $store.state.totalProduct }}</div>
     </div>
   </div>
-
   <router-link to="/Transaction/Payment/dataCheckUser">
      <button class="checkout">Bezahlen</button>
   </router-link>
-      
+  <button class="checkout" @click="$store.commit('clearCart')">Alle Produkte entfernen</button>
       
 
 </div>
@@ -163,9 +162,10 @@ export default {
   }
   
   .shopping-cart {
-    background-color: rgba(130, 38, 14, 0.5);
+    background-color: #82260E;
     color: white;
     padding: 5%;
+    box-shadow: 0 0 5px 5px white;
   }
   
   /* Column headers */
@@ -245,6 +245,7 @@ export default {
     float: right;
     border: 0;
     margin-top: 20px;
+    margin-left: 15px;
     padding: 6px 25px;
     background-color: white;
     color: #82260E;
@@ -263,6 +264,7 @@ export default {
       margin: 0;
       padding-top: 20px;
       border-top: 1px solid #eee;
+      margin: 5%;
     }
   
     .column-labels {
