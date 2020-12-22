@@ -6,6 +6,9 @@
 
 @media (min-width: 1200px) and (max-width: 1600px) {
 
+.contact {
+    margin: auto;
+} 
 
 .full.slider_cont_section {
     padding-top: 80px;
@@ -51,6 +54,31 @@ p.large {
 
 .testimonial_cont {
     padding-bottom: 35px;
+}
+
+.img-products-body {
+    width: 100%;
+    
+}
+
+.drinkBody{
+    margin-left: 0%;
+    max-width: 45%;
+    margin-left: 8%;
+}
+
+.flavorBody {
+    max-width: 45%;
+}
+
+.background {
+padding: 30px;
+max-width: 100%;
+margin: auto;
+margin-top: 2%;
+background-color: #82260E;
+box-shadow: 0 0 5px 5px white;
+margin-top: 20%;
 }
 
 }
@@ -105,13 +133,51 @@ p.large {
     padding-bottom: 35px;
 }
 
+.contact {
+    margin: auto;
+}
+
+.img-products-body {
+	width: 100%;
+}  
+
+.img-products-body {
+    width: 100%;
     
+}
+
+.drinkBody{
+    margin-left: 0%;
+    max-width: 45%;
+    margin-left: 8%;
+}
+
+.flavorBody {
+    max-width: 45%;
+}
+
+.background {
+padding: 30px;
+max-width: 100%;
+margin: auto;
+margin-top: 2%;
+background-color: #82260E;
+box-shadow: 0 0 5px 5px white;
+margin-top: 20%;
+}
 }
 
 /**-- big tablet --**/
 
 @media (min-width: 768px) and (max-width: 991px) {
 
+.footer-bottom {
+    margin-right: 12%;
+    margin-left: 12%;
+}
+.contact {
+    margin: auto;
+} 
 .logo_section {
     text-align: center;
     margin-top:20px;
@@ -198,13 +264,44 @@ p.large {
     padding-bottom: 30px;
 }
 
+.img-products-body {
+	width: 100%;
+}
 
+.img-products-body {
+    width: 100%;
+    
+}
+
+.drinkBody{
+    margin-left: 0%;
+    max-width: 45%;
+    margin-left: 8%;
+}
+
+.flavorBody {
+    max-width: 45%;
+}
+
+.background {
+padding: 30px;
+max-width: 100%;
+margin: auto;
+margin-top: 2%;
+background-color: #82260E;
+box-shadow: 0 0 5px 5px white;
+margin-top: 20%;
+}
 
 }
 
 /**-- verticle mobile --**/
 
 @media (min-width: 576px) and (max-width: 767px) {
+
+.contact {
+    margin: auto;
+} 
 
 .logo {
     text-align: center;
@@ -456,7 +553,34 @@ h4.widget_heading {
 	padding: 0;
 }
 
+.img-products-body {
+	width: 100%;
+}
 
+.img-products-body {
+    width: 100%;
+    
+}
+
+.drinkBody{
+    margin-left: 0%;
+    max-width: 45%;
+    margin-left: 8%;
+}
+
+.flavorBody {
+    max-width: 45%;
+}
+
+.background {
+padding: 30px;
+max-width: 100%;
+margin: auto;
+margin-top: 2%;
+background-color: #82260E;
+box-shadow: 0 0 5px 5px white;
+margin-top: 20%;
+}
 }
 
 /**-- mpbile orginal --**/
@@ -583,15 +707,16 @@ p.large {
 .button_section_red a {
     width: 180px;
     height: 45px;
-    background:#82260E;
+    background: white;
     float: left;
     margin-right: 15px;
+    margin-bottom: 100px;
     line-height: 45px;
     border-radius: 100px;
     font-size: 16px;
-    color: #fff;
+    color: #82260E;
     text-align: left;
-    padding: 0 58px 0 20px;
+    padding: 0 50px 0 20px;
     font-weight: 400;
     position: relative;
     letter-spacing: 0.1px;
@@ -630,12 +755,6 @@ h2.heading_main {
 
 .choose_blog {
     margin-bottom: 50px;
-}
-
-
-
-.dark_bg_orange {
-    margin-top: 35px;
 }
 
 .testimonial_cont {
@@ -678,14 +797,7 @@ footer h3 {
 }
 
 h4.widget_heading {
-    font-size: 30px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 400;
-    margin-top: 40px;
-    padding: 0;
-    letter-spacing: 0.2px;
-    margin-bottom: 0;
+    display: none;
 }
 
 .cpy_right p {
@@ -705,7 +817,30 @@ h4.widget_heading {
 	padding: 0;
 }
 
+.img-products-body {
+    width: 100%;
+    
+}
 
+.drinkBody{
+    margin-left: 0%;
+    max-width: 45%;
+    margin-left: 8%;
+}
+
+.flavorBody {
+    max-width: 45%;
+}
+
+.background {
+padding: 30px;
+max-width: 100%;
+margin: auto;
+margin-top: 2%;
+background-color: #82260E;
+box-shadow: 0 0 5px 5px white;
+margin-top: 20%;
+}
 }
   
 
