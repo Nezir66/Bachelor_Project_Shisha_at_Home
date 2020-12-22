@@ -24,15 +24,6 @@
                 >
               </slide>
             </carousel-3d>
-          <hr />
-          <p
-            style="margin-top: 30px; width:50%,color:white; cursor:pointer;"
-            @click="$store.commit('deleteProduct', drink)"
-          >
-            Delete
-          </p>
-          <router-link to="/Admin/addNewProducts">Go Admin</router-link>
-          <button @click="$store.commit('clearCart')">delete Cart</button>
         </div>
       </div>
       <div class="col-xl-2"></div>
