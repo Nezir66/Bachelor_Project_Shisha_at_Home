@@ -15,7 +15,7 @@
                            Angebot
                         </div>
                      </router-link>
-                     <router-link to="/Account/profil" href="#">
+                     <router-link to="/Account/profil" href="#" v-if="$store.state.auth.loggedIn == true">
                         <div class="sidebarContent">
                            Profil
                         </div>
