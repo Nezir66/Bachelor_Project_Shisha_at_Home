@@ -1,59 +1,59 @@
 <template>
   <div>
     <div class="row">
-      <div class="col-lg-3">
-        <h4><strong>Benutzername:</strong></h4>
+      <div class="col-lg-3 profil-data">
+        <p><strong>Benutzername:</strong></p>
       </div>
-      <div class="col-lg-3">
-        <h4><slot name="userName"></slot></h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <h4><strong>E-mail:</strong></h4>
-      </div>
-      <div class="col-lg-3">
-        <h4><slot name="email"></slot></h4>
+      <div class="col-lg-3 user-data">
+        <p><slot name="userName"></slot></p>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3">
-        <h4><strong>Vorname:</strong></h4>
+      <div class="col-lg-3 profil-data">
+        <p><strong>E-mail:</strong></p>
       </div>
-      <div class="col-lg-3">
-        <h4><slot name="firstName"></slot></h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <h4><strong>Nachname:</strong></h4>
-      </div>
-      <div class="col-lg-3">
-        <h4><slot name="lastName"></slot></h4>
+      <div class="col-lg-3 user-data">
+        <p><slot name="email"></slot></p>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3">
-        <h4><strong>Addresse:</strong></h4>
+      <div class="col-lg-3 profil-data">
+        <p><strong>Vorname:</strong></p>
       </div>
-      <div class="col-lg-5">
-        <h4><slot name="address"></slot></h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3">
-        <h4><strong>PLZ:</strong></h4>
-      </div>
-      <div class="col-lg-3">
-        <h4><slot name="plz"></slot></h4>
+      <div class="col-lg-3 user-data">
+        <p><slot name="firstName"></slot></p>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3">
-        <h4><strong>Ort:</strong></h4>
+      <div class="col-lg-3 profil-data">
+        <p><strong>Nachname:</strong></p>
       </div>
-      <div class="col-lg-3">
-        <h4><slot name="city"></slot></h4>
+      <div class="col-lg-3 user-data">
+        <p><slot name="lastName"></slot></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 profil-data">
+        <p><strong>Addresse:</strong></p>
+      </div>
+      <div class="col-lg-5 user-data">
+        <p><slot name="address"></slot></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 profil-data">
+        <p><strong>PLZ:</strong></p>
+      </div>
+      <div class="col-lg-3 user-data">
+        <p><slot name="plz"></slot></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 profil-data">
+        <p><strong>Ort:</strong></p>
+      </div>
+      <div class="col-lg-3 user-data">
+        <p><slot name="city"></slot></p>
       </div>
     </div>
   </div>
@@ -61,3 +61,34 @@
 <script>
 export default {};
 </script>
+
+<style scopped>
+p {
+  color: white;
+}
+
+p strong {
+  color: white;
+}
+@media (max-width: 575px) {
+  .profil-data {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .user-data {
+    display: inline-block;
+    width: 68%;
+  }
+
+  p {
+    color: white;
+    font-size: 15px;
+  }
+
+  p strong {
+    color: white;
+    font-size: 15px;
+  }
+}
+</style>
