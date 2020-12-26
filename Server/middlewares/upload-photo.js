@@ -31,5 +31,3 @@ const upload = multer({
 });
 
 module.exports = upload;
-
-//AWS Passwort: aY4h=bq~UWR2.4!
