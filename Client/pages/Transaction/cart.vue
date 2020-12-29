@@ -17,6 +17,8 @@
       >
         <div class="product-details">
           <div class="product-title">{{ product.flavor }}</div>
+          <div class="product-title">{{ product.hookah }}</div>
+          <div class="product-title">{{ product.coal }}</div>
           <div class="product-title">{{ product.drink }}</div>
           <div class="product-description">{{ product.description }}</div>
         </div>
@@ -263,7 +265,6 @@ label {
   color: white;
 }
 
-/* Make adjustments for tablet */
 @media screen and (max-width: 650px) {
   .shopping-cart {
     margin: 0;
@@ -315,7 +316,7 @@ label {
     width: 70px;
   }
 }
-/* Make more adjustments for phone */
+
 @media screen and (max-width: 350px) {
   .product-removal {
     float: right;
