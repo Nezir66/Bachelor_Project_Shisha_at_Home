@@ -5,7 +5,6 @@ export const state = () => ({
     totalPrice: 0,
     totalProduct: 0,
     login: false,
-    response: [],
   });
   
   export const actions = {
@@ -64,9 +63,6 @@ export const state = () => ({
     changeLogToTrue(state) {
       state.login = true;
     },
-    // pushPayment(state, paymentIntent){
-    //   state.response.push(paymentIntent);
-    // }
   };
   
   export const getters = {
