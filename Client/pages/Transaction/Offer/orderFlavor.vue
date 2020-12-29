@@ -4,10 +4,14 @@
       <div class="row wholeBody">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <!--Shisha Flavors-->
-          <div id="container-whole" class="container-fluid browsing-history">
-            <h1>Tabak Sorten</h1>
+          <div id="container-whole" class="browsing-history">
+            <h2>Tabak Sorten</h2>
             <hr />
-            <carousel-3d :controls-visible="true" :clickable="false">
+            <carousel-3d
+              style="height: 250px"
+              :controls-visible="true"
+              :clickable="true"
+            >
               <slide
                 class="sliderFlavor"
                 v-for="(flavor, index) in flavors"
@@ -17,13 +21,94 @@
               >
                 <h3>{{ flavor.flavor }}</h3>
                 <p>{{ flavor.description }}</p>
-                <h2>{{ flavor.price }} €</h2>
+                <h3>{{ flavor.price }} €</h3>
                 <a @click="addProductToCart(flavor)" class="btn btn-danger"
                   >In den Einkaufswagen</a
                 >
               </slide>
             </carousel-3d>
             <hr />
+            <h2>Shisha und Kohle</h2>
+            <carousel-3d :controls-visible="true" :clickable="true">
+              <slide 
+                class="sliderFlavor" 
+                :key="hookah._id" 
+                :index="0">
+                <h3>{{ hookah.hookah }}</h3>
+                <img
+                  src="/images/Shisha-icon.png"
+                  alt="Shisha Icon"
+                  style="margin-top: -30px"
+                />
+                <h3>{{ hookah.price }} €</h3>
+                <a @click="addProductToCart(hookah)" class="btn btn-danger"
+                  >+ 1 In den Einkaufswagen</a
+                >
+              </slide>
+
+              <slide
+                class="sliderFlavor"
+                :key="coal._id"
+                :index="1"
+                style="padding-top: 10%"
+              >
+                <h3 style="margin-top: -5%">Kohle</h3>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  alt="Shisha Kohle Icon"
+                  x="0px"
+                  y="0px"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 172 172"
+                  style="fill: #000000;"
+                >
+                  <g transform="translate(-10.32,-10.32) scale(1.12,1.12)">
+                    <g
+                      fill="none"
+                      fill-rule="nonzero"
+                      stroke="none"
+                      stroke-width="1"
+                      stroke-linecap="butt"
+                      stroke-linejoin="miter"
+                      stroke-miterlimit="10"
+                      stroke-dasharray=""
+                      stroke-dashoffset="0"
+                      font-family="none"
+                      font-weight="none"
+                      font-size="none"
+                      text-anchor="none"
+                      style="mix-blend-mode: normal"
+                    >
+                      <path d="M0,172v-172h172v172z" fill="none"></path>
+                      <g>
+                        <path
+                          d="M53.75,150.5l-32.25,-17.91667v-39.41667l32.25,17.91667zM118.25,150.5l-32.25,-17.91667v-39.41667l32.25,17.91667zM86,93.16667l-32.25,-17.91667v-39.41667l32.25,17.91667z"
+                          fill="#000000"
+                        ></path>
+                        <g fill="#333333">
+                          <path
+                            d="M53.75,150.5l32.25,-17.91667v-39.41667l-32.25,17.91667zM118.25,150.5l32.25,-17.91667v-39.41667l-32.25,17.91667zM86,93.16667l32.25,-17.91667v-39.41667l-32.25,17.91667z"
+                          ></path>
+                        </g>
+                        <g fill="#333333">
+                          <path
+                            d="M21.5,93.16667l32.25,-17.91667l32.25,17.91667l-32.25,17.91667zM86,93.16667l32.25,-17.91667l32.25,17.91667l-32.25,17.91667zM53.75,35.83333l32.25,-17.91667l32.25,17.91667l-32.25,17.91667z"
+                          ></path>
+                        </g>
+                      </g>
+                      <path d="" fill="none"></path>
+                      <path d="" fill="none"></path>
+                      <path d="" fill="none"></path>
+                    </g>
+                  </g>
+                </svg>
+                <h3>{{ coal.price }} €</h3>
+                <a @click="addProductToCart(coal)" class="btn btn-danger"
+                  >+ 3 In den Einkaufswagen</a
+                >
+              </slide>
+            </carousel-3d>
           </div>
         </div>
       </div>
@@ -48,6 +133,22 @@ export default {
       console.log(err);
     }
   },
+  data() {
+    return {
+      hookah: {
+        _id: 1,
+        hookah: "Unity Shisha",
+        price: 13,
+        quantity: 1,
+      },
+      coal: {
+        _id: 2,
+        coal: "3 x Kohle",
+        price: 2,
+        quantity: 1,
+      }
+    }
+  },
   components: {
     navbar: Navbar,
   },
@@ -61,15 +162,12 @@ export default {
 .sliderFlavor {
   background-color: #82260e;
   padding: 5%;
+  text-align: center;
 }
 .wholeBody {
   padding: 0;
 }
-#container-whole {
-  text-align: center;
-  color: white;
-  padding: 50px;
-}
+
 .btn {
   background-color: white;
   color: #82260e !important;
@@ -78,6 +176,20 @@ export default {
 .btn:hover {
   color: white !important;
   background-color: #295406;
+}
+.carousel-3d-container {
+  height: 200px;
+}
+
+.icon {
+  margin-right: 0;
+}
+.carousel-3d-slide img {
+  width: 25%;
+  height: 56%;
+}
+.container-fluid {
+  padding: 0;
 }
 </style>
 
