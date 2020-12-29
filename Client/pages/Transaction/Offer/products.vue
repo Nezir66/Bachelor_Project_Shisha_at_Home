@@ -29,17 +29,11 @@ export default {
   components: {
     "navbar": Navbar,
   }
-
 };
 </script>
 
 <style scoped>
-
-
-
 a{
   color: white;
 }
-
-
 </style>

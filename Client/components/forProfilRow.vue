@@ -70,6 +70,48 @@ p {
 p strong {
   color: white;
 }
+@media (min-width: 768px) and (max-width: 991px){
+  .profil-data {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .user-data {
+    display: inline-block;
+    width: 68%;
+  }
+
+  p {
+    color: white;
+    font-size: 15px;
+  }
+
+  p strong {
+    color: white;
+    font-size: 15px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .profil-data {
+    width: 32%;
+    display: inline-block;
+  }
+
+  .user-data {
+    display: inline-block;
+    width: 68%;
+  }
+
+  p {
+    color: white;
+    font-size: 15px;
+  }
+
+  p strong {
+    color: white;
+    font-size: 15px;
+  }
+}
 @media (max-width: 575px) {
   .profil-data {
     width: 32%;

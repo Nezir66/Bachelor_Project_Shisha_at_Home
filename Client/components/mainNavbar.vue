@@ -1,5 +1,5 @@
 <template>
-  <body class="top_section">
+  <body class="top_section cross_layout">
     <!-- section -->
     <section id="home">
       <div class="row">
@@ -60,10 +60,9 @@
                 >
                   <a href="#">
                     <i
-                      class="fa fa-bars"
+                      class="fa fa-bars header-all"
                       style="
                         transform: scale(3);
-                        color: white;
                         cursor: pointer;
                         float: left;
                       "
@@ -74,11 +73,11 @@
                 <div class="col-lg-9 col col-xl-9 col-sm-9 col-md-9 col-xs-9">
                   <div class="right_header_info">
                     <router-link to="/"
-                      ><i class="fa fa-home home-button"></i
+                      ><i class="fa fa-home home-button header-all"></i
                     ></router-link>
                     <router-link
                       to="/Transaction/cart"
-                      class="text-center header-content"
+                      class="text-center header-content header-all"
                       style="margin-top: -20px"
                     >
                       {{ $store.state.totalProduct }}
@@ -92,7 +91,7 @@
                     <router-link
                       id="sidebarCollapse"
                       to="/Account/profil"
-                      class="header-content"
+                      class="header-content header-all"
                       v-if="$auth.$state.loggedIn == true"
                     >
                       {{ $auth.$state.user.name }}&nbsp;&nbsp;
@@ -101,7 +100,7 @@
                         style="transform: scale(2)"
                       ></i>
                     </router-link>
-                    <router-link to="/" class="header-content" href="#" v-else>
+                    <router-link to="/" class="header-content header-all" href="#" v-else>
                       <i
                         class="fa fa-user-circle"
                         style="transform: scale(2)"

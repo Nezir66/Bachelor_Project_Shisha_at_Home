@@ -50,11 +50,11 @@
             <div class="row">
               <div class="col-lg-4 top-product-desc">
                 <h3 class="main_heading _left_side">Shisha</h3>
-                <p class="large">
+                <p class="large p-black">
                   Sie könen bei uns, für eine bestimmte Zeit, eine Shisha
                   bestellen.
                 </p>
-                <div class="full center button_section_white margin_top_30">
+                <div class="center button_section_white margin_top_30">
                   <router-link to="/Transaction/Offer/orderFlavor" href="#"
                     >Angebot</router-link
                   >
@@ -88,7 +88,7 @@
               </div>
               <div class="col-lg-4 top-product-desc">
                 <h3 class="main_heading _left_side">Erfrischende Getränke</h3>
-                <p class="large">
+                <p class="large p-black">
                   Zu jeder Shisha darf natürlich ein kaltes Getränk nicht
                   fehlen, deswegen haben Sie auch bei uns eine große Auswahl an
                   Getränken
@@ -215,7 +215,7 @@
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <div class="testomonial_section">
-                          <div class="full center">
+                          <div class="center">
                             <div class="client_img">
                               <img
                                 src="/images/Basar.jpeg"
@@ -225,8 +225,8 @@
                               />
                             </div>
                           </div>
-                          <div class="full testimonial_cont text_align_center">
-                            <p>
+                          <div class="testimonial_cont text_align_center">
+                            <p class="p-black">
                               <strong>Nezir Basar</strong><br /><strong
                                 class="orange_color"
                                 >Student</strong
@@ -351,4 +351,8 @@ export default {
 </script>
 
 <style scoped>
+
+.p-black {
+  color: black;
+}
 </style>

@@ -2,12 +2,10 @@
 <navbar>
   <div class="container-fluid">
     <div class="row wholeBody">
-      <div class="col-xl-2"></div>
-      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <!--Drinks-->
-
-        <div id="container-whole" class="container-fluid browsing-history">
-          <h1>Getränke & Cocktails</h1>
+        <div id="container-whole" class="browsing-history">
+          <h2>Getränke</h2>
           <hr />
           <carousel-3d :controls-visible="true" :clickable="false">
               <slide
@@ -26,7 +24,6 @@
             </carousel-3d>
         </div>
       </div>
-      <div class="col-xl-2"></div>
     </div>
   </div>
   </navbar>
@@ -62,14 +59,10 @@ export default {
 .sliderDrink {
   background-color: #82260e;
   padding: 5%;
+  text-align: center;
 }
 .wholeBody {
   padding: 0;
-}
-#container-whole {
-  text-align: center;
-  color: white;
-  padding: 50px;
 }
 .btn {
   background-color: white;
@@ -80,7 +73,6 @@ export default {
   color: white !important;
   background-color: #295406;
 }
-</style>
 </style>
 
 <!--

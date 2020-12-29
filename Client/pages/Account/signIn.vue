@@ -4,7 +4,7 @@
       <div class="row wholeBody">
         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
-            <div class="text-center" style="height: 770px">
+            <div class="text-center" style="height: 570px">
               <div class="form-signin">
                 <h1 class="h3 mb-3 font-weight-normal" style="color: white;">Einloggen</h1>
                 <hr>
@@ -27,7 +27,7 @@
                   class="btn btn-lg btn-primary btn-block"
                   @click="loginUser()"
                 >
-                  Sign in
+                  Einloggen
                 </button>
                 <br>
                 <router-link 

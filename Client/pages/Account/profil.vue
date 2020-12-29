@@ -2,8 +2,8 @@
   <navbar>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
-        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
+        <div class="col-xl-2 col-lg-2 col-sm-1 col-xs-1"></div>
+        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-10 col-xs-10">
           <div v-if="$store.state.auth.loggedIn == true">
             <div class="profil fontColor" v-if="switchToChangeData == false">
               <h1 class="center" style="color: white">Profil</h1>
@@ -122,7 +122,7 @@
             <h1 style="color: white; text-align: center">Nicht Angemeldet</h1>
           </div>
         </div>
-        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+        <div class="col-xl-2 col-lg-2 col-sm-1 col-xs-1"></div>
       </div>
     </div>
   </navbar>
@@ -218,6 +218,7 @@ export default {
   padding: 15px;
   margin: auto;
   margin-top: 2%;
+  margin-bottom:5%;
   background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }
