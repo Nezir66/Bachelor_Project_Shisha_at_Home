@@ -1,32 +1,39 @@
 <template>
   <navbar>
     <div class="container-fluid">
-      <div class="row" style="height: 770px; padding: 0">
-        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <div class="row" style="height: 500px; padding: 0">
+        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 font-color">
+          <div class="payment">
           <h1>Zahlungsart</h1>
           <hr />
           <p>Gesamtsumme: {{ $store.state.totalPrice }}€</p>
-          <div ref="card"></div>
-          <br />
+          <img src="/images/visa.png" width="102" height="73" alt="Bezahlen mit Visa" @click="changeToVisa">
+          <div ref="card" v-show="visa == true"></div>
           <button
             class="btn btn-primary"
-            style="float: right"
+            style="float: right; margin-top: 30px;"
             @click="onClickCardPay"
+            v-show="visa == true"
           >
             Bezahlen
           </button>
-          <br /><br />
-          <hr />
+
           <img
             @click="onClickSofortPay()"
-            style="transform: scale(1); cursor: pointer"
+            style="cursor: pointer"
             src="/images/klarna-sofort.png"
-            alt="Sofort pay"
+            alt="Bezahlen mit Sofort Pay"
           />
-          <button @click="test()">test</button>
+
+          <img
+            @click="onClickCashPay()"
+            style="cursor: pointer"
+            width="102" height="73"
+            src="/images/barzahlen.png"
+            alt="Bezahlen mit Barzahlung"
+          />
+          </div>
         </div>
-        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
       </div>
     </div>
   </navbar>
@@ -43,6 +50,7 @@ export default {
       card: null,
       name: "",
       email: "",
+      visa: false,
     };
   },
   mounted() {
@@ -57,12 +65,7 @@ export default {
     "navbar": Navbar,
   },
   methods: {
-    ...
-    NavbarmapMutations(["pushPayment"]),
-
-    test(){
-        console.log(this.$store.state.response);
-    },
+    ...mapMutations(["pushPayment"]),
     async onClickCardPay() {
       try {
         let token = await this.stripe.createToken(this.card); // we create a token with the credit card number
@@ -72,6 +75,7 @@ export default {
             token: token,
             totalPrice: this.$store.state.totalPrice,
             cart: this.$store.state.cart,
+            payment: "Visa"
           }
         );
 
@@ -89,6 +93,8 @@ export default {
           "http://localhost:3000/Shisha@home/paymentSofort",
           {
             totalPrice: this.$store.state.totalPrice, //sends the total amount of price from the user to the server
+            cart: this.$store.state.cart,
+            payment: "Sofort"
           }
         );
         if (response.success) {
@@ -111,6 +117,26 @@ export default {
         console.log(err);
       }
     },
+    async onClickCashPay() {
+      try {
+        let response = await this.$axios.$post(
+          "http://localhost:3000/Shisha@home/paymentCash",
+          {
+            cart: this.$store.state.cart,
+            payment: "Barzahlung"
+          }
+        );
+        if (response.success) {
+          this.$store.commit("clearCart"); //clear the cart array in vuex store
+          this.$router.push("/");
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    changeToVisa() {
+      this.visa = !this.visa;
+    }
   },
 };
 </script>
@@ -141,5 +167,34 @@ export default {
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+.btn {
+  background-color: white;
+  color: #82260e;
+  border: 0;
+}
+
+.btn:hover {
+  background-color: #295406;
+  color: white;
+}
+
+.font-color {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p {
+  color: white;
+}
+
+.payment {
+  padding: 15px;
+  margin: auto;
+  margin-top: 2%;
+  background-color: #82260e;
+  box-shadow: 0 0 5px 5px white;
 }
 </style>
