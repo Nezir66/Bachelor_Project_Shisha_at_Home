@@ -299,6 +299,9 @@
   .img-drink {
     margin-left: 50px;
   }
+  #container-whole {
+    padding: 0;
+  }
 }
 
 /**-- verticle mobile --**/
@@ -398,7 +401,7 @@
   }
 
   .main_heading._left_side {
-    font-size: 42px;
+    font-size: 28px;
   }
 
   p.large {
@@ -478,7 +481,7 @@
   .testimonial_cont {
     background: #fff;
     margin-top: -40px;
-    padding-top: 60px;
+    padding-top: 10px;
     min-height: 295px;
     padding-left: 20px;
     padding-right: 20px;
@@ -585,6 +588,7 @@
   }
 
   .top_section {
+    height: 100%;
     background: url("/images/Background-Image-First-Page-Mobile.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -595,11 +599,20 @@
   .bottom-drink-section {
     margin-bottom: 0;
   }
+
+  .top-product-desc {
+    text-align: center;
+    margin-top: 30px;
+  }
+  #container-whole {
+    padding: 0;
+  }
+  
 }
 
 /**-- mpbile orginal --**/
 
-@media (max-width: 575px) {
+@media (max-width: 575px){
   .logo {
     text-align: center;
   }
@@ -660,6 +673,7 @@
   }
 
   .top_section {
+    height: 100%;
     background: url("/images/Background-Image-First-Page-Mobile.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -701,7 +715,7 @@
 
   .main_heading._left_side {
     text-align: center;
-    font-size: 42px;
+    font-size: 28px;
   }
 
   p.large {
@@ -744,6 +758,11 @@
     letter-spacing: 0.1px;
   }
 
+  .top-product-desc {
+    margin-top: 30px;
+  }
+  
+
   .margin_top_50_rs {
     margin-top: 50px !important;
   }
@@ -763,7 +782,7 @@
   }
 
   .cross_layout {
-    min-height: 780px;
+    min-height: 680px;
   }
 
   .cross_layout .container {
@@ -777,8 +796,8 @@
 
   .testimonial_cont {
     background: #fff;
-    margin-top: -40px;
-    padding-top: 60px;
+    margin-top: 20px;
+    padding-top: 10px;
     min-height: 295px;
     padding-left: 20px;
     padding-right: 20px;
@@ -865,5 +884,20 @@
 
   .bottom-drink-section {
     margin-bottom: 0;
+  }
+
+  .calculator {
+    max-width: 70%;
+    padding: 20px;
+    text-align: center;
+  }
+  #container-whole {
+    padding: 0;
+  }
+
+  @media (max-width: 575px) and (min-height: 681px) {
+    .cross_layout{
+      min-height: 740px;
+    }
   }
 }
