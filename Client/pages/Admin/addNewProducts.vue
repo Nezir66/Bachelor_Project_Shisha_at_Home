@@ -1,22 +1,19 @@
 <template>
+<navbar>
   <div class="container-fluid">
-    <div class="row wholeBody">
-      <div class="col-xl-2"></div>
-      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
+    <div class="row addProductAdmin">
+
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div v-if="$auth.$state.user.name == 'Admin'">
           <!--Shisha Flavors-->
           <div id="container-whole" class="container-fluid browsing-history">
             <div class="row">
               <div
-                class="col-xl-3 col-lg-3 col-md-4 col-sm-7 col-7 br bb bodyOfProd"
+                class="col-xl-2 col-lg-2 col-md-4 col-sm-5 col-5 br bb bodyOfProd"
                 v-for="(flavor, index) in flavors"
                 :key="flavor._id"
               >
                 <div class="history-box">
-                  <a href="#" class="a-link-normal">
-                    <img :src="flavor.photo" class="img-fluid" />
-                  </a>
-
                   <div class="a-spacing-top-base asin-title">
                     <span class="a-text-normal">
                       <div class="p13n-sc-truncated">{{ flavor.flavor }}</div>
@@ -39,13 +36,13 @@
 
                   <div class="a-row">
                     <nuxt-link
-                      :to="`/flavors/${flavor._id}`"
-                      class="a-button-history margin-right-10"
+                      :to="`/Admin/Flavors/${flavor._id}`"
+                      class="btn margin-right-10"
                       >Update</nuxt-link
                     >
                     <a
                       @click="deleteFlavor(flavor._id, index)"
-                      class="a-button-history margin-right-10"
+                      class="btn margin-right-10"
                       >Delete</a
                     >
                   </div>
@@ -53,8 +50,8 @@
               </div>
             </div>
             <nuxt-link to="/Admin/Flavors"
-              ><a class="btn btn-primary" style="margin-top: 40px"
-                >+ Add new Flavor</a
+              ><button class="btn btn-primary"
+                >+ Add new Flavor</button
               ></nuxt-link
             >
           </div>
@@ -63,7 +60,7 @@
           <div id="container-whole" class="container-fluid browsing-history">
             <div class="row">
               <div
-                class="col-xl-3 col-lg-3 col-md-4 col-sm-7 col-7 br bb bodyOfProd"
+                class="col-xl-2 col-lg-2 col-md-4 col-sm-5 col-5 br bb bodyOfProd"
                 v-for="(drink, index) in drinks"
                 :key="drink._id"
               >
@@ -91,22 +88,22 @@
 
                   <div class="a-row">
                     <nuxt-link
-                      :to="`/drinks/${drink._id}`"
-                      class="a-button-history margin-right-10"
+                      :to="`/Admin/Drinks/${drink._id}`"
+                      class="btn margin-right-10"
                       >Update</nuxt-link
                     >
                     <a
                       @click="deleteDrink(drink._id, index)"
-                      class="margin-right-10"
+                      class="btn margin-right-10"
                       >Delete</a
                     >
                   </div>
                 </div>
               </div>
             </div>
-            <nuxt-link to="/drinks"
-              ><a class="btn btn-primary" style="margin-top: 40px"
-                >+ Add new Drink</a
+            <nuxt-link to="/Admin/Drinks"
+              ><button class="btn btn-primary"
+                >+ Add new Drink</button
               ></nuxt-link
             >
           </div>
@@ -117,12 +114,14 @@
           </h1>
         </div>
       </div>
-      <div class="col-xl-2"></div>
+
     </div>
   </div>
+  </navbar>
 </template>
 
 <script>
+import Navbar from "~/components/mainNavbar.vue";
 export default {
   async asyncData({ $axios }) {
     try {
@@ -140,6 +139,9 @@ export default {
     } catch (err) {
       console.log(err);
     }
+  },
+  components: {
+    "navbar": Navbar,
   },
   methods: {
     async deleteFlavor(id, index) {
@@ -174,12 +176,44 @@ export default {
 </script>
 
 <style scoped>
+.top_section{
+  height: 1080px;
+}
 #container-whole {
-  padding: 50px;
+  padding: 5px;
 }
 .bodyOfProd {
-  background-color: rgba(15, 40, 50, 0.3);
-    margin-top: 5%;
-  margin-left: 30px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 5%;
+  margin-right: 30px;
+  padding: 1%;
 }
+
+.btn {
+  background-color: white;
+  color: #82260e;
+  border: 0;
+  margin-bottom:2%;
+}
+
+.btn:hover {
+  background-color: #295406;
+  color: white;
+}
+
+.font-color {
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addProductAdmin {
+  padding: 15px;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  background-color: #82260e;
+  box-shadow: 0 0 5px 5px white;
+}
+
 </style>
