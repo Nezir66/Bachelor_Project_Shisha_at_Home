@@ -11,7 +11,7 @@
               <input
                 type="text"
                 class="input-flavor"
-                placeholder="Geschmack"
+                placeholder="Getränk"
                 v-model="drink"
               />
             </label>
@@ -67,7 +67,7 @@ export default {
         data
       );
 
-      this.$router.push("/");
+      this.$router.push("/Admin/addNewProducts");
     },
   },
 };

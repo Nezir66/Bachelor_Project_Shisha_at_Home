@@ -79,7 +79,7 @@ export default {
         "http://localhost:3000/Shisha@home/flavor",
         data
       );
-      this.$router.push("/");
+      this.$router.push("/Admin/addNewProducts");
     },
   },
 };
