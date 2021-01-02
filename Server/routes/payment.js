@@ -95,15 +95,13 @@ router.post("/paymentSofort", verifyToken, (req, res) => {
             quantity: parseInt(product.quantity),
             price: product.price,
           });
-        }
-        else if (product.hasOwnProperty("hookah")) {
+        } else if (product.hasOwnProperty("hookah")) {
           order.product.push({
             productIDHookah: product._id,
             quantity: parseInt(product.quantity),
             price: product.price,
           });
-        }
-        else if (product.hasOwnProperty("hookah")) {
+        } else if (product.hasOwnProperty("hookah")) {
           order.product.push({
             productIDCoal: product._id,
             quantity: parseInt(product.quantity),
@@ -128,45 +126,43 @@ router.post("/paymentSofort", verifyToken, (req, res) => {
 router.post("/paymentCash", verifyToken, async (req, res) => {
   try {
     let order = new Order();
-      let cart = req.body.cart;
-      console.log(cart);
-      cart.map((product) => {
-        if (product.hasOwnProperty("flavor")) {
-          order.product.push({
-            productIDFlavor: product._id,
-            quantity: parseInt(product.quantity),
-            price: product.price,
-          });
-        } else if (product.hasOwnProperty("drink")) {
-          order.product.push({
-            productIDDrink: product._id,
-            quantity: parseInt(product.quantity),
-            price: product.price,
-          });
-        }
-        else if (product.hasOwnProperty("hookah")) {
-          order.product.push({
-            productIDHookah: product._id,
-            quantity: parseInt(product.quantity),
-            price: product.price,
-          });
-        }
-        else if (product.hasOwnProperty("hookah")) {
-          order.product.push({
-            productIDCoal: product._id,
-            quantity: parseInt(product.quantity),
-            price: product.price,
-          });
-        }
-      });
-      order.payment = req.body.payment;
-      order.buyer = req.decoded._id;
-      await order.save();
+    let cart = req.body.cart;
+    console.log(cart);
+    cart.map((product) => {
+      if (product.hasOwnProperty("flavor")) {
+        order.product.push({
+          productIDFlavor: product._id,
+          quantity: parseInt(product.quantity),
+          price: product.price,
+        });
+      } else if (product.hasOwnProperty("drink")) {
+        order.product.push({
+          productIDDrink: product._id,
+          quantity: parseInt(product.quantity),
+          price: product.price,
+        });
+      } else if (product.hasOwnProperty("hookah")) {
+        order.product.push({
+          productIDHookah: product._id,
+          quantity: parseInt(product.quantity),
+          price: product.price,
+        });
+      } else if (product.hasOwnProperty("hookah")) {
+        order.product.push({
+          productIDCoal: product._id,
+          quantity: parseInt(product.quantity),
+          price: product.price,
+        });
+      }
+    });
+    order.payment = req.body.payment;
+    order.buyer = req.decoded._id;
+    await order.save();
 
-      res.json({
-        success: true,
-        message: "Successfully payed",
-      });
+    res.json({
+      success: true,
+      message: "Successfully payed",
+    });
   } catch (err) {
     res.status(500).json({
       // if error then print this and get status 500
@@ -174,6 +170,6 @@ router.post("/paymentCash", verifyToken, async (req, res) => {
       message: err.message,
     });
   }
-})
+});
 
 module.exports = router;
