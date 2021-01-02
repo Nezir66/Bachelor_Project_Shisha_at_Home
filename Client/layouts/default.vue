@@ -1,16 +1,16 @@
 <template>
-  <div style="position:relative;">
+  <div>
     <Nuxt />
     <Footer />
   </div>
 </template>
 
 <script>
-import Footer from '../components/footer.vue'
+import Footer from "../components/footer.vue";
 export default {
   components: {
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 

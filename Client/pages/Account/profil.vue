@@ -6,9 +6,9 @@
         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-10 col-xs-10">
           <div v-if="$store.state.auth.loggedIn == true">
             <div class="profil fontColor" v-if="switchToChangeData == false">
-              <h1 class="center" style="color: white">Profil</h1>
+              <h1 class="center" style="color: white" tabindex="0">Profil</h1>
               <hr />
-              <data-user>
+              <data-user tabindex="0">
                 <template v-slot:userName>{{
                   $auth.$state.user.name
                 }}</template>
@@ -36,6 +36,8 @@
                 class="center"
                 style="color: white; cursor: pointer"
                 @click="switchToChange()"
+                @keyup.enter="switchToChange()"
+                tabindex="0"
               >
                 Profil
               </h1>
@@ -107,19 +109,28 @@
               <button
                 class="btn btn-lg btn-primary btn-block"
                 @click="updateUser()"
+                @keyup.enter="updateUser()"
               >
                 Ändern
               </button>
-              <a class="link" href="#" @click="logOut()">Ausloggen</a>
+              <a class="link" href="#" @click="logOut()" @keyup.enter="logOut()"
+                >Ausloggen</a
+              >
               <br />
-              <a class="link" href="#" @click="deleteUser()"
+              <a
+                class="link"
+                href="#"
+                @click="deleteUser()"
+                @keyup.enter="deleteUser()"
                 >Benutzer Löschen</a
               >
               <p class="mt-2 mb-1 text-muted">© 2020</p>
             </div>
           </div>
           <div v-else>
-            <h1 style="color: white; text-align: center">Nicht Angemeldet</h1>
+            <h1 style="color: white; text-align: center" tabindex="0">
+              Nicht Angemeldet
+            </h1>
           </div>
         </div>
         <div class="col-xl-2 col-lg-2 col-sm-1 col-xs-1"></div>
@@ -218,7 +229,7 @@ export default {
   padding: 15px;
   margin: auto;
   margin-top: 2%;
-  margin-bottom:5%;
+  margin-bottom: 5%;
   background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }

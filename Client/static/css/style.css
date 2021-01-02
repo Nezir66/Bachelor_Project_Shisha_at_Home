@@ -18,17 +18,9 @@
     import Files
 ---------------------------------------------------------------------*/
 
-@import url(/css/animate.min.css);
 @import url(/css/normalize.css);
-@import url(/css/icomoon.css);
 @import url(/css/font-awesome.min.css);
 @import url(/css/meanmenu.css);
-@import url(/css/owl.carousel.min.css);
-@import url(/css/swiper.min.css);
-@import url(/css/slick.css);
-@import url(/css/jquery.fancybox.min.css);
-@import url(/css/jquery-ui.css);
-@import url(/css/nice-select.css);
 
 /*---------------------------------------------------------------------
     skeleton
@@ -50,7 +42,6 @@ body {
 a {
   text-decoration: none !important;
   outline: none !important;
-
 }
 
 h1,
@@ -65,7 +56,7 @@ h6 {
   padding: 0 0 10px 0;
   font-weight: normal;
   line-height: normal;
-  color: #111111;
+  color: white;
   margin: 0;
 }
 
@@ -78,7 +69,7 @@ h2 {
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 1.5rem !important;
 }
 
 h4 {
@@ -1619,6 +1610,7 @@ input[type="radio"] .styled:checked + label::after {
 .top_section {
   height: 1080px;
   background: url("https://www.teteria-enjoy.es/en/wp-content/uploads/2018/07/How-to-Smoke-Hookah.jpg");
+  /*background: url("/images/Background_start_2.jpg");*/
   background-size: cover;
   background-attachment: fixed;
 }
@@ -1638,7 +1630,7 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .header-all:hover {
-  color:#82260e;
+  color: #82260e;
 }
 
 .right_header_info ul {
@@ -1660,13 +1652,13 @@ input[type="radio"] .styled:checked + label::after {
 }
 
 .slider_cont_section h1 {
-	color: #fff;
-	text-transform: uppercase;
-	font-size: 48px;
-	font-weight: 700;
-	padding: 0;
-	line-height: normal;
-  }
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 700;
+  padding: 0;
+  line-height: normal;
+}
 
 .slider_cont_section h4 {
   color: #fff;
@@ -2045,12 +2037,10 @@ h2.heading_main {
 }
 
 .choose_blog p {
-  color: #fff;
+  color: white;
   padding: 0 20px;
   font-size: 17px;
   line-height: 24px;
-  font-weight: 200;
-  opacity: 0.7;
 }
 
 .dark_bg_orange {
@@ -2161,7 +2151,7 @@ footer h3 {
   float: left;
 }
 
-h4.widget_heading {
+h3.widget_heading {
   font-size: 25px;
   color: black;
   text-transform: uppercase;
@@ -2368,8 +2358,7 @@ a:hover {
 .drinkBody {
   cursor: pointer;
   text-align: center;
-  display: inline-block;
-  margin-left: 11%;
+  float: right;
 }
 
 .flavorBody:hover {
@@ -2387,7 +2376,7 @@ a:hover {
 }
 
 .calculator {
-  color: white!important;
+  color: white !important;
   max-width: 50%;
   padding: 15px;
   margin: auto;
@@ -2398,18 +2387,19 @@ a:hover {
 }
 
 .eachlabel {
+  margin-top: 10px;
   margin-right: 20px;
 }
 
 .btn {
-  background-color: white!important;
-  color: #82260e!important;
+  background-color: white !important;
+  color: #82260e !important;
   border: 0;
 }
 
 .btn:hover {
-  background-color: #295406!important;
-  color: white!important;
+  background-color: #295406 !important;
+  color: white !important;
 }
 
 .hookahNumber {
@@ -2424,7 +2414,6 @@ a:hover {
   text-align: center;
   color: white;
   padding: 50px;
-
 }
 
 @keyframes slide-in {

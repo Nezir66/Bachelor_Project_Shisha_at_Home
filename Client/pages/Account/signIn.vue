@@ -4,41 +4,48 @@
       <div class="row wholeBody">
         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
-            <div class="text-center" style="height: 570px">
-              <div class="form-signin">
-                <h1 class="h3 mb-3 font-weight-normal" style="color: white;">Einloggen</h1>
-                <hr>
-                <input
-                  type="email"
-                  id="inputEmail"
-                  class="form-control"
-                  placeholder="Email adresse"
-                  v-model="email"
-                />
-                <input
-                  type="password"
-                  id="inputPassword"
-                  class="form-control"
-                  placeholder="Passwort"
-                  v-model="password"
-                />
-                <hr />
-                <button
-                  class="btn btn-lg btn-primary btn-block"
-                  @click="loginUser()"
-                >
-                  Einloggen
-                </button>
-                <br>
-                <router-link 
-                to="/Account/signUp"
-                class="link">
-                  Registrieren
-                </router-link>
-                <p class="mt-5 mb-4 text-muted"><router-link to="/" href="#"><img src="/images/Logo_Shisha_at_Home.png" height="80" width="180" alt="Logo vom Unternehmen"></router-link></p>
-              </div>
+          <div class="text-center" style="height: 570px">
+            <div class="form-signin">
+              <h1 class="center" style="color: white" tabindex="0">
+                Einloggen
+              </h1>
+              <hr />
+              <input
+                type="email"
+                id="inputEmail"
+                class="form-control"
+                placeholder="Email Adresse"
+                v-model="email"
+              />
+              <input
+                type="password"
+                id="inputPassword"
+                class="form-control"
+                placeholder="Passwort"
+                v-model="password"
+              />
+              <hr />
+              <button
+                class="btn btn-lg btn-primary btn-block"
+                @click="loginUser()"
+              >
+                Einloggen
+              </button>
+              <br />
+              <router-link to="/Account/signUp" class="link">
+                Registrieren
+              </router-link>
+              <p class="mt-5 mb-4 text-muted">
+                <router-link to="/" href="#"
+                  ><img
+                    src="/images/Logo_Shisha_at_Home.png"
+                    height="80"
+                    width="180"
+                    alt="Logo vom Unternehmen"
+                /></router-link>
+              </p>
             </div>
-          
+          </div>
         </div>
         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
       </div>
@@ -58,7 +65,7 @@ export default {
     };
   },
   components: {
-    "navbar": Navbar
+    navbar: Navbar,
   },
   methods: {
     async loginUser() {
@@ -85,16 +92,16 @@ export default {
   padding: 15px;
   margin: auto;
   margin-top: 5%;
-  background-color: #82260E;
+  background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }
-.form-control{
+.form-control {
   margin-top: 40px;
 }
 
 .btn {
   background-color: white;
-  color: #82260E;
+  color: #82260e;
   border: 0;
 }
 
@@ -108,6 +115,12 @@ export default {
 }
 
 .link:hover {
-  color:#295406;
+  color: #295406;
+}
+
+@media (max-width: 575px) {
+  .form-signin {
+    margin-top: 0;
+  }
 }
 </style>

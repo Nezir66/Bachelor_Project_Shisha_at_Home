@@ -1,7 +1,8 @@
 <template>
   <navbar>
     <div class="shopping-cart">
-      <h1>Shopping Cart</h1>
+      <h1 style="color: white" tabindex="0">Einkaufswagen</h1>
+      <hr />
       <div class="column-labels">
         <label class="product-details">Product</label>
         <label class="product-price">Preis</label>
@@ -15,22 +16,41 @@
         v-for="product in $store.state.cart"
         :key="product._id"
       >
-        <div class="product-details">
-          <div class="product-title">{{ product.flavor }}</div>
-          <div class="product-title">{{ product.hookah }}</div>
-          <div class="product-title">{{ product.coal }}</div>
-          <div class="product-title">{{ product.drink }}</div>
+        <div class="product-details" tabindex="0">
+          <a class="product-title" v-if="product.flavor">{{
+            product.flavor
+          }}</a>
+          <a class="product-title" v-else-if="product.hookah">{{
+            product.hookah
+          }}</a>
+          <a class="product-title" v-else-if="product.coal">{{
+            product.coal
+          }}</a>
+          <a class="product-title" v-else-if="product.drink">{{
+            product.drink
+          }}</a>
           <div class="product-description">{{ product.description }}</div>
         </div>
-        <div class="product-price">{{ product.price }}</div>
-        <div class="product-quantity">
+        <a
+          href="#"
+          class="product-price"
+          :aria-label="'Preis' + product.price + 'Euro'"
+          >{{ product.price }}</a
+        >
+        <a
+          class="product-quantity"
+          :aria-label="'Menge' + product.quantity + 'Stück'"
+          tabindex="0"
+        >
           {{ product.quantity }}
-        </div>
+        </a>
         <div class="product-removal">
           <a
             href="#"
             class="remove-product"
+            aria-label="Produkt entfernen"
             @click="$store.commit('deleteProduct', product)"
+            @keyup.enter="$store.commit('deleteProduct', product)"
             >Enfernen</a
           >
         </div>
@@ -39,17 +59,23 @@
         </div>
       </div>
 
-      <div class="totals" v-if="$store.state.cart.length <= 0">
-        <div class="totals-item">
-          <label>Gesamtsumme</label>
-          <div class="totals-value" id="cart-subtotal">0</div>
-        </div>
+      <div
+        class="totals totals-item"
+        v-if="$store.state.cart.length <= 0"
+        tabindex="0"
+      >
+        <label>Gesamtsumme</label>
+        <div class="totals-value" id="cart-subtotal" aria-label="0 Euro">0</div>
       </div>
 
       <div class="totals" v-else>
-        <div class="totals-item">
+        <div class="totals-item" tabindex="0">
           <label>Gesamtsumme</label>
-          <div class="totals-value" id="cart-subtotal">
+          <div
+            class="totals-value"
+            id="cart-subtotal"
+            :aria-label="$store.state.totalPrice + 'Euro'"
+          >
             {{ $store.state.totalPrice }}
           </div>
         </div>
@@ -60,10 +86,18 @@
           </div>
         </div>
       </div>
-      <router-link to="/Transaction/Payment/dataCheckUser">
+      <router-link
+        to="/Transaction/Payment/dataCheckUser"
+        v-show="$store.state.cart.length > 0"
+      >
         <button class="checkout">Bezahlen</button>
       </router-link>
-      <button class="checkout" @click="$store.commit('clearCart')">
+      <button
+        class="checkout"
+        @click="$store.commit('clearCart')"
+        @keyup.enter="$store.commit('clearCart')"
+        v-show="$store.state.cart.length > 0"
+      >
         Alle Produkte entfernen
       </button>
     </div>
@@ -100,6 +134,10 @@ export default {
 };
 </script>
 <style scoped>
+a {
+  color: white;
+}
+
 .product-details {
   float: left;
   width: 57%;
@@ -250,7 +288,8 @@ label {
   text-align: right;
 }
 .checkout {
-  float: right;
+  display: inline-block;
+  width: 48%;
   border: 0;
   margin-top: 20px;
   margin-left: 15px;
@@ -266,6 +305,13 @@ label {
 }
 
 @media screen and (max-width: 650px) {
+  .checkout {
+    display: inline-block;
+    width: 46%;
+    margin-left: 10px;
+    padding: 6px 2px;
+  }
+
   .shopping-cart {
     margin: 0;
     padding-top: 20px;

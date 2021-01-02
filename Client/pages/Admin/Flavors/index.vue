@@ -72,7 +72,7 @@ export default {
         flavor: this.flavor,
         description: this.description,
         price: this.price,
-        photo: this.icon
+        photo: this.icon,
       };
 
       let results = await this.$axios.$post(

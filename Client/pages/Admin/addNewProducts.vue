@@ -1,122 +1,119 @@
 <template>
-<navbar>
-  <div class="container-fluid">
-    <div class="row addProductAdmin">
+  <navbar>
+    <div class="container-fluid">
+      <div class="row addProductAdmin">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div v-if="$auth.$state.user.name == 'Admin'">
+            <!--Shisha Flavors-->
+            <div id="container-whole" class="container-fluid browsing-history">
+              <div class="row">
+                <div
+                  class="col-xl-2 col-lg-2 col-md-4 col-sm-5 col-5 br bb bodyOfProd"
+                  v-for="(flavor, index) in flavors"
+                  :key="flavor._id"
+                >
+                  <div class="history-box">
+                    <div class="a-spacing-top-base asin-title">
+                      <span class="a-text-normal">
+                        <div class="p13n-sc-truncated">{{ flavor.flavor }}</div>
+                      </span>
+                    </div>
 
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div v-if="$auth.$state.user.name == 'Admin'">
-          <!--Shisha Flavors-->
-          <div id="container-whole" class="container-fluid browsing-history">
-            <div class="row">
-              <div
-                class="col-xl-2 col-lg-2 col-md-4 col-sm-5 col-5 br bb bodyOfProd"
-                v-for="(flavor, index) in flavors"
-                :key="flavor._id"
-              >
-                <div class="history-box">
-                  <div class="a-spacing-top-base asin-title">
-                    <span class="a-text-normal">
-                      <div class="p13n-sc-truncated">{{ flavor.flavor }}</div>
-                    </span>
-                  </div>
+                    <div class="a-spacing-top-base asin-title">
+                      <span class="a-text-normal">
+                        <div class="p13n-sc-truncated">
+                          {{ flavor.description }}
+                        </div>
+                      </span>
+                    </div>
 
-                  <div class="a-spacing-top-base asin-title">
-                    <span class="a-text-normal">
-                      <div class="p13n-sc-truncated">
-                        {{ flavor.description }}
-                      </div>
-                    </span>
-                  </div>
+                    <div class="a-row">
+                      <span class="a-size-base a-color-price">
+                        <span class="p13n-sc-price">{{ flavor.price }}$</span>
+                      </span>
+                    </div>
 
-                  <div class="a-row">
-                    <span class="a-size-base a-color-price">
-                      <span class="p13n-sc-price">{{ flavor.price }}$</span>
-                    </span>
-                  </div>
-
-                  <div class="a-row">
-                    <nuxt-link
-                      :to="`/Admin/Flavors/${flavor._id}`"
-                      class="btn margin-right-10"
-                      >Update</nuxt-link
-                    >
-                    <a
-                      @click="deleteFlavor(flavor._id, index)"
-                      class="btn margin-right-10"
-                      >Delete</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <nuxt-link to="/Admin/Flavors"
-              ><button class="btn btn-primary"
-                >+ Add new Flavor</button
-              ></nuxt-link
-            >
-          </div>
-
-          <!--Drinks-->
-          <div id="container-whole" class="container-fluid browsing-history">
-            <div class="row">
-              <div
-                class="col-xl-2 col-lg-2 col-md-4 col-sm-5 col-5 br bb bodyOfProd"
-                v-for="(drink, index) in drinks"
-                :key="drink._id"
-              >
-                <div class="history-box">
-
-                  <div class="a-spacing-top-base asin-title">
-                    <span class="a-text-normal">
-                      <div class="p13n-sc-truncated">{{ drink.drink }}</div>
-                    </span>
-                  </div>
-
-                  <div class="a-spacing-top-base asin-title">
-                    <span class="a-text-normal">
-                      <div class="p13n-sc-truncated">
-                        {{ drink.description }}
-                      </div>
-                    </span>
-                  </div>
-
-                  <div class="a-row">
-                    <span class="a-size-base a-color-price">
-                      <span class="p13n-sc-price">{{ drink.price }}$</span>
-                    </span>
-                  </div>
-
-                  <div class="a-row">
-                    <nuxt-link
-                      :to="`/Admin/Drinks/${drink._id}`"
-                      class="btn margin-right-10"
-                      >Update</nuxt-link
-                    >
-                    <a
-                      @click="deleteDrink(drink._id, index)"
-                      class="btn margin-right-10"
-                      >Delete</a
-                    >
+                    <div class="a-row">
+                      <nuxt-link
+                        :to="`/Admin/Flavors/${flavor._id}`"
+                        class="btn margin-right-10"
+                        >Update</nuxt-link
+                      >
+                      <a
+                        @click="deleteFlavor(flavor._id, index)"
+                        class="btn margin-right-10"
+                        >Delete</a
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
+              <nuxt-link to="/Admin/Flavors"
+                ><button class="btn btn-primary">
+                  + Add new Flavor
+                </button></nuxt-link
+              >
             </div>
-            <nuxt-link to="/Admin/Drinks"
-              ><button class="btn btn-primary"
-                >+ Add new Drink</button
-              ></nuxt-link
-            >
+
+            <!--Drinks-->
+            <div id="container-whole" class="container-fluid browsing-history">
+              <div class="row">
+                <div
+                  class="col-xl-2 col-lg-2 col-md-4 col-sm-5 col-5 br bb bodyOfProd"
+                  v-for="(drink, index) in drinks"
+                  :key="drink._id"
+                >
+                  <div class="history-box">
+                    <div class="a-spacing-top-base asin-title">
+                      <span class="a-text-normal">
+                        <div class="p13n-sc-truncated">{{ drink.drink }}</div>
+                      </span>
+                    </div>
+
+                    <div class="a-spacing-top-base asin-title">
+                      <span class="a-text-normal">
+                        <div class="p13n-sc-truncated">
+                          {{ drink.description }}
+                        </div>
+                      </span>
+                    </div>
+
+                    <div class="a-row">
+                      <span class="a-size-base a-color-price">
+                        <span class="p13n-sc-price">{{ drink.price }}$</span>
+                      </span>
+                    </div>
+
+                    <div class="a-row">
+                      <nuxt-link
+                        :to="`/Admin/Drinks/${drink._id}`"
+                        class="btn margin-right-10"
+                        >Update</nuxt-link
+                      >
+                      <a
+                        @click="deleteDrink(drink._id, index)"
+                        class="btn margin-right-10"
+                        >Delete</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <nuxt-link to="/Admin/Drinks"
+                ><button class="btn btn-primary">
+                  + Add new Drink
+                </button></nuxt-link
+              >
+            </div>
           </div>
-        </div>
-        <div v-else>
-          <h1 class="text-center" style="height: 800px">
-            You have no Admin rights
-          </h1>
+          <div v-else>
+            <h1 class="text-center" style="height: 800px">
+              You have no Admin rights
+            </h1>
+          </div>
         </div>
       </div>
-
     </div>
-  </div>
   </navbar>
 </template>
 
@@ -141,7 +138,7 @@ export default {
     }
   },
   components: {
-    "navbar": Navbar,
+    navbar: Navbar,
   },
   methods: {
     async deleteFlavor(id, index) {
@@ -176,7 +173,7 @@ export default {
 </script>
 
 <style scoped>
-.top_section{
+.top_section {
   height: 1080px;
 }
 #container-whole {
@@ -193,7 +190,7 @@ export default {
   background-color: white;
   color: #82260e;
   border: 0;
-  margin-bottom:2%;
+  margin-bottom: 2%;
 }
 
 .btn:hover {
@@ -215,5 +212,4 @@ export default {
   background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }
-
 </style>

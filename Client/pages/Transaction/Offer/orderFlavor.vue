@@ -5,7 +5,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <!--Shisha Flavors-->
           <div id="container-whole" class="browsing-history">
-            <h2>Tabak Sorten</h2>
+            <h2 tabindex="0">Tabak Sorten</h2>
             <hr />
             <carousel-3d
               style="height: 250px"
@@ -14,34 +14,41 @@
             >
               <slide
                 class="sliderFlavor"
+                style="color: white"
                 v-for="(flavor, index) in flavors"
                 :key="flavor._id"
                 :index="index"
-                style=""
               >
-                <h3>{{ flavor.flavor }}</h3>
-                <p>{{ flavor.description }}</p>
-                <h3>{{ flavor.price }} €</h3>
-                <a @click="addProductToCart(flavor)" class="btn btn-danger"
+                <span tabindex="0">
+                  <h3>{{ flavor.flavor }}</h3>
+                  <p>{{ flavor.description }}</p>
+                  <p>{{ flavor.price }} €</p>
+                </span>
+                <a
+                  @click="addProductToCart(flavor)"
+                  class="btn btn-danger"
+                  tabindex="0"
+                  @keyup.enter="addProductToCart(flavor)"
                   >In den Einkaufswagen</a
                 >
               </slide>
             </carousel-3d>
             <hr />
-            <h2>Shisha und Kohle</h2>
+            <h2 tabindex="0">Shisha und Kohle</h2>
             <carousel-3d :controls-visible="true" :clickable="true">
-              <slide 
-                class="sliderFlavor" 
-                :key="hookah._id" 
-                :index="0">
-                <h3>{{ hookah.hookah }}</h3>
+              <slide class="sliderFlavor" :key="hookah._id" :index="0">
+                <h3 tabindex="0">{{ hookah.hookah }}</h3>
                 <img
                   src="/images/Shisha-icon.png"
                   alt="Shisha Icon"
                   style="margin-top: -30px"
                 />
-                <h3>{{ hookah.price }} €</h3>
-                <a @click="addProductToCart(hookah)" class="btn btn-danger"
+                <p tabindex="0">{{ hookah.price }} €</p>
+                <a
+                  @click="addProductToCart(hookah)"
+                  @keyup.enter="addProductToCart(hookah)"
+                  class="btn btn-danger"
+                  tabindex="0"
                   >+ 1 In den Einkaufswagen</a
                 >
               </slide>
@@ -52,7 +59,7 @@
                 :index="1"
                 style="padding-top: 10%"
               >
-                <h3 style="margin-top: -5%">Kohle</h3>
+                <h3 style="margin-top: -5%" tabindex="0">Kohle</h3>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   alt="Shisha Kohle Icon"
@@ -61,7 +68,7 @@
                   width="100"
                   height="100"
                   viewBox="0 0 172 172"
-                  style="fill: #000000;"
+                  style="fill: #000000"
                 >
                   <g transform="translate(-10.32,-10.32) scale(1.12,1.12)">
                     <g
@@ -103,8 +110,12 @@
                     </g>
                   </g>
                 </svg>
-                <h3>{{ coal.price }} €</h3>
-                <a @click="addProductToCart(coal)" class="btn btn-danger"
+                <p tabindex="0">{{ coal.price }} €</p>
+                <a
+                  @click="addProductToCart(coal)"
+                  @keyup.enter="addProductToCart(coal)"
+                  tabindex="0"
+                  class="btn btn-danger"
                   >+ 3 In den Einkaufswagen</a
                 >
               </slide>
@@ -146,8 +157,8 @@ export default {
         coal: "3 x Kohle",
         price: 2,
         quantity: 1,
-      }
-    }
+      },
+    };
   },
   components: {
     navbar: Navbar,

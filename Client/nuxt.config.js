@@ -1,25 +1,8 @@
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Client',
+    title: 'Shisha@Home',
     script: [
-      {
-        src: '~/assets/js/jquery.min.js',
-        type: 'text/javascript'
-      },
-      {
-        src: '~/assets/js/jquery.slim.min.js',
-        type: 'text/javascript'
-      },
-      {
-        src: '~/assets/js/popper.min.js'
-      },
-      {
-        src: '~/assets/js/bootstrap.bundle.min.js'
-      },
-      {
-        src: '~/assets/js/custom.js'
-      },
       { src: "https://js.stripe.com/v3" }
     ],
     meta: [
@@ -31,7 +14,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: '/css/style.css' },
       { rel: 'stylesheet', href: '/css/bootstrap.min.css' },
-      { rel: 'stylesheet', href: '/css/bootstrap.bundle.min.css' },
       { rel: 'stylesheet', href: '/css/responsive.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' },
     ]
@@ -44,7 +26,6 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [  
     { src: "~/plugins/localStorage.js", ssr: false },
-    { src: "~/plugins/vueCarousel.js", ssr: false },
     { src: "~/plugins/vueCarousel-3D.js", ssr: false }
   ],
 

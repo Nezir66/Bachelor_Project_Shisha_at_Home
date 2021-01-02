@@ -1,31 +1,37 @@
 <template>
-<navbar>
-  <div class="container-fluid">
-    <div class="row wholeBody">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <!--Drinks-->
-        <div id="container-whole" class="browsing-history">
-          <h2>Getränke</h2>
-          <hr />
-          <carousel-3d :controls-visible="true" :clickable="false">
+  <navbar>
+    <div class="container-fluid">
+      <div class="row wholeBody">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <!--Drinks-->
+          <div id="container-whole" class="browsing-history">
+            <h2 tabindex="0">Getränke</h2>
+            <hr />
+            <carousel-3d :controls-visible="true" :clickable="false">
               <slide
                 class="sliderDrink"
                 v-for="(drink, index) in drinks"
                 :key="drink._id"
                 :index="index"
               >
-                <h3>{{ drink.drink }}</h3>
-                <p>{{ drink.description }}</p>
-                <h2>{{ drink.price }} €</h2>
-                <a @click="addProductToCart(drink)" class="btn btn-danger"
+                <span tabindex="0">
+                  <h3>{{ drink.drink }}</h3>
+                  <p>{{ drink.description }}</p>
+                  <p>{{ drink.price }} €</p>
+                </span>
+                <a
+                  tabindex="0"
+                  @click="addProductToCart(drink)"
+                  @keyup.enter="addProductToCart(drink)"
+                  class="btn btn-danger"
                   >In den Einkaufswagen</a
                 >
               </slide>
             </carousel-3d>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   </navbar>
 </template>
 

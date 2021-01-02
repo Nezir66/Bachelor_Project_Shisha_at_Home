@@ -77,7 +77,6 @@
     margin-top: 2%;
     background-color: #82260e;
     box-shadow: 0 0 5px 5px white;
-    margin-top: 20%;
   }
 }
 
@@ -517,7 +516,7 @@
     justify-content: center;
   }
 
-  h4.widget_heading {
+  h3.widget_heading {
     font-size: 30px;
     color: #fff;
     text-transform: uppercase;
@@ -607,12 +606,11 @@
   #container-whole {
     padding: 0;
   }
-  
 }
 
 /**-- mpbile orginal --**/
 
-@media (max-width: 575px){
+@media (max-width: 575px) {
   .logo {
     text-align: center;
   }
@@ -761,7 +759,6 @@
   .top-product-desc {
     margin-top: 30px;
   }
-  
 
   .margin_top_50_rs {
     margin-top: 50px !important;
@@ -833,7 +830,7 @@
     justify-content: center;
   }
 
-  h4.widget_heading {
+  h3.widget_heading {
     display: none;
   }
 
@@ -896,7 +893,7 @@
   }
 
   @media (max-width: 575px) and (min-height: 681px) {
-    .cross_layout{
+    .cross_layout {
       min-height: 740px;
     }
   }

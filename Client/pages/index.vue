@@ -15,7 +15,7 @@
                         src="/images/Logo_Shisha_at_Home.png"
                         height="220"
                         width="500"
-                        alt="Logo von vom Unternehmen Shisha @ Home"
+                        alt="Logo vom Unternehmen Shisha @ Home"
                         class="img-responsive"
                     /></router-link>
                   </div>
@@ -40,10 +40,12 @@
         <!-- section -->
         <div id="about" class="section layout_padding dark_bg_orange">
           <div class="container">
-             <div class="row">
+            <div class="row">
               <div class="col-md-12">
                 <div class="center">
-                  <h2 class="heading_main orange_heading">Angebot</h2>
+                  <h2 class="heading_main orange_heading" tabindex="0">
+                    Angebot
+                  </h2>
                 </div>
               </div>
             </div>
@@ -55,7 +57,10 @@
                   bestellen.
                 </p>
                 <div class="center button_section_white margin_top_30">
-                  <router-link to="/Transaction/Offer/orderFlavor" href="#"
+                  <router-link
+                    to="/Transaction/Offer/orderFlavor"
+                    href="#"
+                    aria-label="Shisha Angebote anzeigen"
                     >Angebot</router-link
                   >
                 </div>
@@ -94,7 +99,10 @@
                   Getränken
                 </p>
                 <div class="full center button_section_white margin_top_30">
-                  <router-link to="/Transaction/Offer/orderDrink" href="#"
+                  <router-link
+                    to="/Transaction/Offer/orderDrink"
+                    href="#"
+                    aria-label="Getränke Angebote anzeigen"
                     >Angebot</router-link
                   >
                 </div>
@@ -113,14 +121,16 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="full center">
-                  <h2 class="heading_main orange_heading">Ablauf</h2>
+                  <h2 class="heading_main orange_heading" tabindex="0">
+                    Ablauf
+                  </h2>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-4">
                 <div class="full">
-                  <div class="choose_blog text_align_center">
+                  <div class="choose_blog text_align_center" tabindex="0">
                     <i
                       class="fa fa-cart-arrow-down"
                       style="
@@ -130,7 +140,9 @@
                       "
                     ></i>
                     <br />
-                    <h3>Bestellung Aufgeben</h3>
+                    <h3 aria-label="Erstens Bestellung aufgeben.">
+                      Bestellung Aufgeben
+                    </h3>
                     <p>
                       Wählen Sie die Produkte die Sie gerne Bestellen möchten
                       aus und bezahlen dann diese.
@@ -140,7 +152,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="full">
-                  <div class="choose_blog text_align_center">
+                  <div class="choose_blog text_align_center" tabindex="0">
                     <i
                       class="fa fa-hourglass-start"
                       style="
@@ -149,7 +161,7 @@
                         margin-bottom: 50px;
                       "
                     ></i>
-                    <h3>Vorbereitung</h3>
+                    <h3 aria-label="Zweitens Vorbereitung.">Vorbereitung</h3>
                     <p>
                       Nachdem die Bezhalung erfolgreich abgeschlossen ist, wird
                       Ihre Bestellung von den Mitarbeitern vorbereitet und so
@@ -160,7 +172,7 @@
               </div>
               <div class="col-lg-4">
                 <div class="full">
-                  <div class="choose_blog text_align_center">
+                  <div class="choose_blog text_align_center" tabindex="0">
                     <i
                       class="fa fa-flag-checkered"
                       style="
@@ -169,7 +181,7 @@
                         margin-bottom: 50px;
                       "
                     ></i>
-                    <h3>Ankunft</h3>
+                    <h3 aria-label="Drittens Ankunft.">Ankunft</h3>
                     <p>
                       Nachdem die Bestellung geliefet wurde bekommen Sie von den
                       Mitarbeitern eine kurze Erklärung zur Aufbau der
@@ -181,7 +193,10 @@
               </div>
               <div class="col-md-12">
                 <div class="full center button_section_red">
-                  <router-link to="/Transaction/tutorial" href="#"
+                  <router-link
+                    to="/Transaction/tutorial"
+                    href="#"
+                    aria-label="Mehr über den Ablauf erfahren"
                     >Mehr Erfrahren</router-link
                   >
                 </div>
@@ -200,7 +215,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="full center">
-                  <h2 class="heading_main orange_heading">Über uns</h2>
+                  <h2 class="heading_main orange_heading" tabindex="0">
+                    Über uns
+                  </h2>
                 </div>
               </div>
             </div>
@@ -226,7 +243,7 @@
                             </div>
                           </div>
                           <div class="testimonial_cont text_align_center">
-                            <p class="p-black">
+                            <p class="p-black" tabindex="0">
                               <strong>Nezir Basar</strong><br /><strong
                                 class="orange_color"
                                 >Student</strong
@@ -262,7 +279,9 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="full center">
-                  <h2 class="heading_main orange_heading">Kontaktieren</h2>
+                  <h2 class="heading_main orange_heading" tabindex="0">
+                    Kontaktieren
+                  </h2>
                 </div>
               </div>
             </div>
@@ -297,7 +316,10 @@
                         </div>
                         <div class="col-md-12">
                           <div class="field">
-                            <textarea placeholder="Nachricht"></textarea>
+                            <textarea
+                              placeholder="Nachricht"
+                              aria-label="Ihre Nachricht"
+                            ></textarea>
                           </div>
                         </div>
                         <div class="col-md-12">
@@ -351,8 +373,7 @@ export default {
 </script>
 
 <style scoped>
-
 .p-black {
-  color: black;
+  color: black !important;
 }
 </style>

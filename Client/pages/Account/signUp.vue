@@ -1,12 +1,14 @@
 <template>
   <navbar>
     <div class="container-fluid">
-      <div class="row ">
+      <div class="row">
         <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
-          <div class="text-center" >
-            <div class="form-signin">
-              <h1 class="h3 mb-3 font-weight-normal link">Registrieren</h1>
+          <div class="text-center">
+            <div class="form-signup">
+              <h1 class="center" style="color: white" tabindex="0">
+                Registrieren
+              </h1>
               <hr />
               <div class="row">
                 <input
@@ -53,7 +55,7 @@
                   type="text"
                   class="form-control"
                   v-model="address"
-                  placeholder="Addresse"
+                  placeholder="Adresse"
                 />
               </div>
               <div class="row">
@@ -76,10 +78,19 @@
               <button
                 class="btn btn-lg btn-primary btn-block"
                 @click="signUpUser()"
+                @keyup.enter="signUpUser()"
               >
                 Registrieren
               </button>
-              <p class="mt-5 mb-4 text-muted"><router-link to="/" href="#"><img src="/images/Logo_Shisha_at_Home.png" height="80" width="180" alt="Logo vom Unternehmen"></router-link></p>
+              <p class="mt-5 mb-4 text-muted">
+                <router-link to="/" href="#"
+                  ><img
+                    src="/images/Logo_Shisha_at_Home.png"
+                    height="80"
+                    width="180"
+                    alt="Logo vom Unternehmen"
+                /></router-link>
+              </p>
             </div>
           </div>
         </div>
@@ -106,7 +117,7 @@ export default {
     };
   },
   components: {
-    "navbar": Navbar
+    navbar: Navbar,
   },
   methods: {
     async signUpUser() {
@@ -119,7 +130,7 @@ export default {
           lastName: this.lastName,
           address: this.address,
           plz: this.plz,
-          city: this.city
+          city: this.city,
         };
         let responseLoginData = await this.$axios.$post(
           "http://localhost:3000/Shisha@home/auth/signup",
@@ -136,7 +147,6 @@ export default {
             },
           });
         }
-
       } catch (err) {
         console.log(err);
       }
@@ -150,19 +160,19 @@ export default {
   margin: auto;
   margin-top: 40px;
 }
-.form-signin {
+.form-signup {
   width: 100%;
   max-width: 700px;
   padding: 15px;
   margin: auto;
   margin-top: 5%;
   margin-bottom: 5%;
-  background-color: #82260E;
+  background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }
 .btn {
   background-color: white;
-  color: #82260E;
+  color: #82260e;
   border: 0;
 }
 
@@ -176,11 +186,14 @@ export default {
 }
 
 @media (max-width: 575px) {
-.form-control {
-  max-width: 40%;
-  margin: auto;
-  margin-top: 10px;
-}
+  .form-control {
+    max-width: 40%;
+    margin: auto;
+    margin-top: 10px;
+  }
 
+  .form-signup {
+    margin-top: 0;
+  }
 }
 </style>

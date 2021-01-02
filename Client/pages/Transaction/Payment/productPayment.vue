@@ -4,34 +4,49 @@
       <div class="row" style="height: 500px; padding: 0">
         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 font-color">
           <div class="payment">
-          <h1>Zahlungsart</h1>
-          <hr />
-          <p>Gesamtsumme: {{ $store.state.totalPrice }}€</p>
-          <img src="/images/visa.png" width="102" height="73" alt="Bezahlen mit Visa" @click="changeToVisa">
-          <div ref="card" v-show="visa == true"></div>
-          <button
-            class="btn btn-primary"
-            style="float: right; margin-top: 30px;"
-            @click="onClickCardPay"
-            v-show="visa == true"
-          >
-            Bezahlen
-          </button>
+            <h1 class="center" style="color: white" tabindex="0">
+              Zahlungsart
+            </h1>
+            <hr />
+            <p tabindex="0">Gesamtsumme: {{ $store.state.totalPrice }}€</p>
+            <img
+              src="/images/visa.png"
+              width="102"
+              height="73"
+              alt="Bezahlen mit Visa"
+              @click="changeToVisa"
+              @keyup.enter="changeToVisa"
+              tabindex="0"
+            />
+            <div ref="card" v-show="visa == true"></div>
+            <button
+              class="btn btn-primary"
+              style="float: right; margin-top: 30px"
+              @click="onClickCardPay"
+              v-show="visa == true"
+            >
+              Bezahlen
+            </button>
 
-          <img
-            @click="onClickSofortPay()"
-            style="cursor: pointer"
-            src="/images/klarna-sofort.png"
-            alt="Bezahlen mit Sofort Pay"
-          />
+            <img
+              @click="onClickSofortPay"
+              @keyup.enter="onClickSofortPay"
+              style="cursor: pointer"
+              src="/images/klarna-sofort.png"
+              alt="Bezahlen mit Sofort Pay"
+              tabindex="0"
+            />
 
-          <img
-            @click="onClickCashPay()"
-            style="cursor: pointer"
-            width="102" height="73"
-            src="/images/barzahlen.png"
-            alt="Bezahlen mit Barzahlung"
-          />
+            <img
+              @click="onClickCashPay"
+              @keyup.enter="onClickCashPay"
+              style="cursor: pointer"
+              width="102"
+              height="73"
+              src="/images/barzahlen.png"
+              alt="Bezahlen mit Barzahlung"
+              tabindex="0"
+            />
           </div>
         </div>
       </div>
@@ -41,7 +56,7 @@
 
 <script>
 import Navbar from "~/components/mainNavbar.vue";
-import {mapMutations} from 'vuex'
+import { mapMutations } from "vuex";
 export default {
   data() {
     return {
@@ -62,7 +77,7 @@ export default {
     this.card.mount(this.$refs.card); //mount the input file to the ref with the name "card"
   },
   components: {
-    "navbar": Navbar,
+    navbar: Navbar,
   },
   methods: {
     ...mapMutations(["pushPayment"]),
@@ -75,13 +90,13 @@ export default {
             token: token,
             totalPrice: this.$store.state.totalPrice,
             cart: this.$store.state.cart,
-            payment: "Visa"
+            payment: "Visa",
           }
         );
 
         if (response.success) {
           this.$store.commit("clearCart"); //clear the cart array in vuex store
-          this.$router.push("/");
+          this.$router.push("/Transaction/Payment/finishedPayment");
         }
       } catch (err) {
         console.log(err);
@@ -94,24 +109,24 @@ export default {
           {
             totalPrice: this.$store.state.totalPrice, //sends the total amount of price from the user to the server
             cart: this.$store.state.cart,
-            payment: "Sofort"
+            payment: "Sofort",
           }
         );
         if (response.success) {
           this.$store.commit("clearCart"); //clear the cart array in vuex store
-          await this.stripe
-            .confirmSofortPayment(
-              //with this we will be redirect to the sofort payment page
-              response.paymentIntent.client_secret, // the client secret key from the response of the server
-              {
-                payment_method: {
-                  sofort: {
-                    country: "AT",
-                  },
+          await this.stripe.confirmSofortPayment(
+            //with this we will be redirect to the sofort payment page
+            response.paymentIntent.client_secret, // the client secret key from the response of the server
+            {
+              payment_method: {
+                sofort: {
+                  country: "AT",
                 },
-                return_url: "http://localhost:9000/", // this redirects the user after the payment succesfully completed to the wanted page
-              }
-            )
+              },
+              return_url:
+                "http://localhost:9000/Transaction/Payment/finishedPayment", // this redirects the user after the payment succesfully completed to the wanted page
+            }
+          );
         }
       } catch (err) {
         console.log(err);
@@ -123,12 +138,12 @@ export default {
           "http://localhost:3000/Shisha@home/paymentCash",
           {
             cart: this.$store.state.cart,
-            payment: "Barzahlung"
+            payment: "Barzahlung",
           }
         );
         if (response.success) {
           this.$store.commit("clearCart"); //clear the cart array in vuex store
-          this.$router.push("/");
+          this.$router.push("/Transaction/Payment/finishedPayment");
         }
       } catch (err) {
         console.log(err);
@@ -136,7 +151,7 @@ export default {
     },
     changeToVisa() {
       this.visa = !this.visa;
-    }
+    },
   },
 };
 </script>

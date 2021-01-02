@@ -3,7 +3,7 @@
     <!-- section -->
     <section id="home">
       <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Sidebar">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 Sidebar" tabindex="0">
           <transition name="slide">
             <div class="sideBarNew" v-if="sidebarOpen">
               <div class="sidebarMenü">
@@ -58,27 +58,31 @@
                   class="col-lg-3 col col-xl-3 col-sm-3 col-md-3 col-xs-3"
                   style="margin-top: 20px"
                 >
-                  <a href="#">
+                  <a
+                    href="#"
+                    @keyup.enter="showSidebar"
+                    aria-label="Seiten Menü anzeigen"
+                  >
                     <i
                       class="fa fa-bars header-all"
-                      style="
-                        transform: scale(3);
-                        cursor: pointer;
-                        float: left;
-                      "
+                      style="transform: scale(3); cursor: pointer; float: left"
                       @click="showSidebar"
                     ></i>
                   </a>
                 </div>
                 <div class="col-lg-9 col col-xl-9 col-sm-9 col-md-9 col-xs-9">
                   <div class="right_header_info">
-                    <router-link to="/"
+                    <router-link to="/" aria-label="zur Startseite zurückkehren"
                       ><i class="fa fa-home home-button header-all"></i
                     ></router-link>
                     <router-link
                       to="/Transaction/cart"
                       class="text-center header-content header-all"
                       style="margin-top: -20px"
+                      :aria-label="
+                        'Gesamtprodukte im Einkaufswagen ' +
+                        $store.state.totalProduct
+                      "
                     >
                       {{ $store.state.totalProduct }}
                       <br />
@@ -93,6 +97,7 @@
                       to="/Account/profil"
                       class="header-content header-all"
                       v-if="$auth.$state.loggedIn == true"
+                      aria-label="Profil anschauen"
                     >
                       {{ $auth.$state.user.name }}&nbsp;&nbsp;
                       <i
@@ -100,7 +105,13 @@
                         style="transform: scale(2)"
                       ></i>
                     </router-link>
-                    <router-link to="/" class="header-content header-all" href="#" v-else>
+                    <router-link
+                      to="/"
+                      class="header-content header-all"
+                      href="#"
+                      v-else
+                      aria-label="Anmelden um Profil anzuschauen"
+                    >
                       <i
                         class="fa fa-user-circle"
                         style="transform: scale(2)"

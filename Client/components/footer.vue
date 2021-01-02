@@ -11,6 +11,7 @@
                 height="80"
                 width="180"
                 alt="Logo vom Unternehmen"
+                tabindex="1"
             /></a>
           </div>
         </div>
@@ -18,17 +19,23 @@
           <div class="distance">
             <ul class="social_links">
               <li>
-                <a href="https://www.facebook.com/"
+                <a
+                  href="https://www.facebook.com/"
+                  aria-label="Zur Facebook Seite von Shisha @ Home"
                   ><i class="fa fa-facebook-f"></i
                 ></a>
               </li>
               <li>
-                <a href="https://twitter.com/?lang=de"
+                <a
+                  href="https://twitter.com/?lang=de"
+                  aria-label="Zur Twitter Seite von Shisha @ Home"
                   ><i class="fa fa-twitter"></i
                 ></a>
               </li>
               <li>
-                <a href="https://www.instagram.com/"
+                <a
+                  href="https://www.instagram.com/"
+                  aria-label="Zur Instagram Seite von Shisha @ Home"
                   ><i class="fa fa-instagram"></i
                 ></a>
               </li>
@@ -37,7 +44,13 @@
         </div>
         <div class="col-md-4">
           <div class="distance">
-            <h4 class="widget_heading">SUBSCRIBE</h4>
+            <h3
+              class="widget_heading"
+              tabindex="0"
+              aria-label="Für den Newsletter anmelden"
+            >
+              Anmelden
+            </h3>
           </div>
           <div class="distance subribe_form">
             <form>
@@ -54,11 +67,13 @@
         </div>
         <div class="col-md-4">
           <div class="distance">
-            <h4 class="widget_heading">Links</h4>
+            <h3 class="widget_heading" tabindex="0" aria-label="Wichtige Links">
+              Links
+            </h3>
           </div>
           <div class="distance f_menu">
             <ul>
-              <li><a href="#home">Home</a></li>
+              <li><a href="#home" aria-label="Nach oben gelangen">Home</a></li>
               <li>
                 <router-link to="/Transaction/Offer/products" href="#"
                   >Impressum</router-link
@@ -69,15 +84,15 @@
                   >AGB</router-link
                 >
               </li>
-              <li><a href="#testimonial">About</a></li>
+              <li><a href="#testimonial">Über uns</a></li>
             </ul>
           </div>
         </div>
         <div class="col-md-4">
           <div class="distance">
-            <h4 class="widget_heading">Kontakt Daten</h4>
+            <h3 class="widget_heading" tabindex="0">Kontakt Daten</h3>
             <div class="distance cont_footer">
-              <p>
+              <p tabindex="0">
                 <strong>Shisha@Home</strong><br /><br />Oswald-Redlich-Straße
                 36, Wien<br />Tel.: +43676-911-607-3<br />Nezirbasar@outlook.com
               </p>
