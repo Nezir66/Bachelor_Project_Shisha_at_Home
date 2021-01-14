@@ -11,7 +11,7 @@
                 height="80"
                 width="180"
                 alt="Logo vom Unternehmen"
-                tabindex="1"
+                tabindex="0"
             /></a>
           </div>
         </div>
