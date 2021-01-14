@@ -231,7 +231,6 @@
                   >
                     <div class="carousel-inner">
                       <div class="carousel-item active">
-                        <div class="testomonial_section">
                           <div class="center">
                             <div class="client_img">
                               <img
@@ -259,7 +258,6 @@
                               >
                             </p>
                           </div>
-                        </div>
                       </div>
                     </div>
                   </div>
