@@ -89,8 +89,9 @@
       <router-link
         to="/Transaction/Payment/dataCheckUser"
         v-show="$store.state.cart.length > 0"
+        class="checkout"
       >
-        <button class="checkout">Bezahlen</button>
+        Bezahlen
       </router-link>
       <button
         class="checkout"
@@ -141,6 +142,10 @@ a {
 .product-details {
   float: left;
   width: 57%;
+}
+
+.product-details:focus {
+  border: 2px solid black;
 }
 
 .product-price {
@@ -212,6 +217,7 @@ label {
   color: white;
   padding: 5%;
   box-shadow: 0 0 5px 5px white;
+  margin-top:7%;
 }
 
 /* Column headers */
@@ -262,6 +268,10 @@ label {
   color: white;
 }
 
+.product .remove-product:focus {
+  background-color: #295406;
+  color: white;
+}
 /* Totals section */
 .totals .totals-item {
   float: right;
@@ -289,6 +299,7 @@ label {
 }
 .checkout {
   display: inline-block;
+  text-align:center;
   width: 48%;
   border: 0;
   margin-top: 20px;
@@ -300,6 +311,11 @@ label {
 }
 
 .checkout:hover {
+  background-color: #295406;
+  color: white;
+}
+
+.checkout:focus {
   background-color: #295406;
   color: white;
 }

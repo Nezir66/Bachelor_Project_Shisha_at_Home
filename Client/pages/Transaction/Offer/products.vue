@@ -4,8 +4,7 @@
       <div class="row">
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="background">
-            <div class="flavorBody">
-              <router-link to="/Transaction/Offer/orderFlavor">
+              <router-link to="/Transaction/Offer/orderFlavor" class="flavorBody">
                 <h1>Shisha</h1>
                 <img
                   src="/images/Lava-United-Shisha-silber.jpg"
@@ -13,9 +12,8 @@
                   class="img-products-body"
                 />
               </router-link>
-            </div>
-            <div class="drinkBody">
-              <router-link to="/Transaction/Offer/orderDrink">
+
+              <router-link to="/Transaction/Offer/orderDrink" class="drinkBody">
                 <h1>Getränk</h1>
                 <img
                   src="/images/cocktail_2.jpg"
@@ -23,7 +21,6 @@
                   class="img-products-body"
                 />
               </router-link>
-            </div>
           </div>
         </div>
       </div>

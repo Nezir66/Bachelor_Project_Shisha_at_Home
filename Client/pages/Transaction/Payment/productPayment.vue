@@ -212,4 +212,8 @@ p {
   background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }
+
+img:focus {
+  border: 2px solid black;
+}
 </style>

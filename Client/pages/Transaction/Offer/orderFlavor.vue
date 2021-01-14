@@ -20,7 +20,7 @@
                 :index="index"
               >
                 <span tabindex="0">
-                  <h3>{{ flavor.flavor }}</h3>
+                  <h3 class="focus">{{ flavor.flavor }}</h3>
                   <p>{{ flavor.description }}</p>
                   <p>{{ flavor.price }} €</p>
                 </span>
@@ -37,7 +37,7 @@
             <h2 tabindex="0">Shisha und Kohle</h2>
             <carousel-3d :controls-visible="true" :clickable="true">
               <slide class="sliderFlavor" :key="hookah._id" :index="0">
-                <h3 tabindex="0">{{ hookah.hookah }}</h3>
+                <h3 tabindex="0" class="focus">{{ hookah.hookah }}</h3>
                 <img
                   src="/images/Shisha-icon.png"
                   alt="Shisha Icon"
@@ -59,7 +59,7 @@
                 :index="1"
                 style="padding-top: 10%"
               >
-                <h3 style="margin-top: -5%" tabindex="0">Kohle</h3>
+                <h3 style="margin-top: -5%" tabindex="0" class="focus">Kohle</h3>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   alt="Shisha Kohle Icon"
@@ -175,10 +175,10 @@ export default {
   padding: 5%;
   text-align: center;
 }
+
 .wholeBody {
   padding: 0;
 }
-
 .btn {
   background-color: white;
   color: #82260e !important;
@@ -188,6 +188,7 @@ export default {
   color: white !important;
   background-color: #295406;
 }
+
 .carousel-3d-container {
   height: 200px;
 }

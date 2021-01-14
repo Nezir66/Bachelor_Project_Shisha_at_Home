@@ -67,6 +67,10 @@ export default {
   padding: 5%;
   text-align: center;
 }
+.sliderDrink:focus {
+  border: 2px solid black;
+}
+
 .wholeBody {
   padding: 0;
 }
