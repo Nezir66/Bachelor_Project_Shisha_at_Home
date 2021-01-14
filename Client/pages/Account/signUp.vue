@@ -165,7 +165,7 @@ export default {
   max-width: 700px;
   padding: 15px;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 11%;
   margin-bottom: 5%;
   background-color: #82260e;
   box-shadow: 0 0 5px 5px white;

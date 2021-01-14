@@ -76,7 +76,15 @@ export default {
             email: this.email,
             password: this.password,
           },
-        });
+        }).catch((err) => {
+          if(err){
+            alert("Falsches Passwort oder Email")
+          }
+        })
+
+        // if(this.$auth.login() == Promise.reject(error)){
+        //   console.log("Wrong password")
+        // }
       } catch (err) {
         console.log(err);
       }
@@ -91,7 +99,7 @@ export default {
   max-width: 500px;
   padding: 15px;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 11%;
   background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }

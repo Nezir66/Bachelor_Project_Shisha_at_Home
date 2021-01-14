@@ -241,7 +241,7 @@ p {
 .profil {
   padding: 15px;
   margin: auto;
-  margin-top: 2%;
+  margin-top: 11%;
   background-color: #82260e;
   box-shadow: 0 0 5px 5px white;
 }
