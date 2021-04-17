@@ -81,7 +81,6 @@ router.post("/paymentSofort", verifyToken, (req, res) => {
     .then(async (charge) => {
       let order = new Order();
       let cart = req.body.cart;
-      console.log(cart);
       cart.map((product) => {
         if (product.hasOwnProperty("flavor")) {
           order.product.push({
@@ -127,7 +126,6 @@ router.post("/paymentCash", verifyToken, async (req, res) => {
   try {
     let order = new Order();
     let cart = req.body.cart;
-    console.log(cart);
     cart.map((product) => {
       if (product.hasOwnProperty("flavor")) {
         order.product.push({

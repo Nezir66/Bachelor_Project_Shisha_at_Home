@@ -29,7 +29,6 @@ UserSchema.pre("save", function (next) {
         if (err) {
           return next(err);
         }
-        console.log(hash);
         user.password = hash; // store the hash in the users password
         next(); // the statement ends here and the Object can then be stored
       });
