@@ -7,27 +7,30 @@
           <br />
           <hr />
           <div style="margin-top: 60px">
-            <label>
+            <label for="drink">
               <input
                 type="text"
+                id="drink"
                 class="input-flavor"
                 placeholder="Getränk"
                 v-model="drink"
               />
             </label>
             <br />
-            <label>
+            <label for="description">
               <textarea
                 type="text"
+                id="description"
                 class="input-flavor"
                 placeholder="Beschreibung"
                 v-model="description"
               ></textarea>
             </label>
             <br />
-            <label>
+            <label for="price">
               <input
                 type="number"
+                id="price"
                 class="input-flavor"
                 placeholder="Preis"
                 v-model="price"

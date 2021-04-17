@@ -6,7 +6,7 @@
           class="col-xl-9 col-lg-9 col-md-12 col-sm-10 col-xs-10"
           style="margin: auto"
         >
-          <div class="profil fontColor">
+          <div class="finishedPayment">
             <h2 class="center" style="color: white" tabindex="0">
               Ihre Zahlung wurde erfolgreich durchgeführt
             </h2>
@@ -31,23 +31,4 @@ export default {
 </script>
 
 <style scoped>
-.profil {
-  padding: 15px;
-  margin: auto;
-  margin-top: 11%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
-  text-align: center;
-}
-
-.btn {
-  background-color: white;
-  color: #82260e;
-  border: 0;
-}
-
-.btn:hover {
-  background-color: #295406;
-  color: white;
-}
 </style>

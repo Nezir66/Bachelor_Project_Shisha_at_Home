@@ -146,7 +146,6 @@ export default {
         let response = await this.$axios.$delete(
           `http://localhost:3000/Shisha@home/flavor/${id}`
         );
-        console.log(this.flavors);
         if (response.status) {
           this.flavors.splice(index, 1);
         }
@@ -187,15 +186,7 @@ export default {
 }
 
 .btn {
-  background-color: white;
-  color: #82260e;
-  border: 0;
   margin-bottom: 2%;
-}
-
-.btn:hover {
-  background-color: #295406;
-  color: white;
 }
 
 .font-color {

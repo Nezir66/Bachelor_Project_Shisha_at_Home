@@ -6,10 +6,11 @@
         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10">
           <div class="text-center" style="height: 570px">
             <div class="form-signin">
-              <h1 class="center" style="color: white" tabindex="0">
+              <h1 class="center" tabindex="0">
                 Einloggen
               </h1>
               <hr />
+              <label for="inputEmail" class="label-hide">Email</label>
               <input
                 type="email"
                 id="inputEmail"
@@ -17,17 +18,20 @@
                 placeholder="Email Adresse"
                 v-model="email"
               />
+              <label for="inputPassword" class="label-hide">Passwort</label>
               <input
                 type="password"
                 id="inputPassword"
                 class="form-control"
                 placeholder="Passwort"
                 v-model="password"
+                @keyup.enter="loginUser()"
               />
               <hr />
               <button
-                class="btn btn-lg btn-primary btn-block"
+                class="btn btn-lg btn-block"
                 @click="loginUser()"
+                @keyup.enter="loginUser()"
               >
                 Einloggen
               </button>
@@ -76,9 +80,11 @@ export default {
             email: this.email,
             password: this.password,
           },
+        }).then(()=>{
+          this.$router.go(0);
         }).catch((err) => {
           if(err){
-            alert("Falsches Passwort oder Email")
+            alert("Falsche Eingangsdaten")
           }
         })
 
@@ -94,36 +100,8 @@ export default {
 </script>
 
 <style scoped>
-.form-signin {
-  width: 100%;
-  max-width: 500px;
-  padding: 15px;
-  margin: auto;
-  margin-top: 11%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
-}
 .form-control {
   margin-top: 40px;
-}
-
-.btn {
-  background-color: white;
-  color: #82260e;
-  border: 0;
-}
-
-.btn:hover {
-  background-color: #295406;
-  color: white;
-}
-
-.link {
-  color: white;
-}
-
-.link:hover {
-  color: #295406;
 }
 
 @media (max-width: 575px) {

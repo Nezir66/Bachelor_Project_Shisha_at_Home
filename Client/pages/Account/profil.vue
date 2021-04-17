@@ -42,14 +42,17 @@
                 Profil
               </h1>
               <br />
+              <label for="inputUsername" class="label-hide">Benutzername</label>
               <input
                 type="text"
-                id="inputEmail"
+                id="inputUsername"
                 class="form-control"
                 :placeholder="$auth.$state.user.name"
                 v-model="name"
+                autofocus
               />
               <br />
+              <label for="inputEmail" class="label-hide">Email</label>
               <input
                 type="email"
                 id="inputEmail"
@@ -58,6 +61,7 @@
                 v-model="email"
               />
               <br />
+              <label for="inputPassword" class="label-hide">Passwort</label>
               <input
                 type="password"
                 id="inputPassword"
@@ -66,6 +70,7 @@
                 v-model="password"
               />
               <br />
+              <label for="firstName" class="label-hide">Vorname</label>
               <input
                 type="text"
                 id="firstName"
@@ -74,6 +79,7 @@
                 v-model="firstName"
               />
               <br />
+              <label for="lastName" class="label-hide">Nachname</label>
               <input
                 type="text"
                 id="lastName"
@@ -82,6 +88,7 @@
                 v-model="lastName"
               />
               <br />
+              <label for="address" class="label-hide">Addresse</label>
               <input
                 type="text"
                 id="address"
@@ -90,6 +97,7 @@
                 v-model="address"
               />
               <br />
+              <label for="plz" class="label-hide">Postleitzahl</label>
               <input
                 type="number"
                 id="plz"
@@ -98,6 +106,7 @@
                 v-model="plz"
               />
               <br />
+              <label for="city" class="label-hide">Ort</label>
               <input
                 type="text"
                 id="city"
@@ -223,40 +232,9 @@ export default {
 </script>
 
 <style scoped>
-.changeData {
-  width: 100%;
-  max-width: 500px;
-  padding: 15px;
-  margin: auto;
-  margin-top: 2%;
-  margin-bottom: 5%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
-}
-
 p {
   font-size: 15px;
 }
-
-.profil {
-  padding: 15px;
-  margin: auto;
-  margin-top: 11%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
-}
-
-.btn {
-  background-color: white;
-  color: #82260e;
-  border: 0;
-}
-
-.btn:hover {
-  background-color: #295406;
-  color: white;
-}
-
 .link {
   color: white;
 }

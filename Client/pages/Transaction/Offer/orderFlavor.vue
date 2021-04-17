@@ -14,7 +14,6 @@
             >
               <slide
                 class="sliderFlavor"
-                style="color: white"
                 v-for="(flavor, index) in flavors"
                 :key="flavor._id"
                 :index="index"
@@ -37,8 +36,9 @@
             <h2 tabindex="0">Shisha und Kohle</h2>
             <carousel-3d :controls-visible="true" :clickable="true">
               <slide class="sliderFlavor" :key="hookah._id" :index="0">
-                <h3 tabindex="0" class="focus">{{ hookah.hookah }}</h3>
+                <h3 tabindex="0" style="margin-bottom: 7%" class="focus">{{ hookah.hookah }}</h3>
                 <img
+                  class="icon-flavor"
                   src="/images/Shisha-icon.png"
                   alt="Shisha Icon"
                   style="margin-top: -30px"
@@ -68,7 +68,8 @@
                   width="100"
                   height="100"
                   viewBox="0 0 172 172"
-                  style="fill: #000000"
+                  style="fill: #000000;"
+                  class="icon-flavor"
                 >
                   <g transform="translate(-10.32,-10.32) scale(1.12,1.12)">
                     <g
@@ -170,23 +171,8 @@ export default {
 </script>
 
 <style scoped>
-.sliderFlavor {
-  background-color: #82260e;
-  padding: 5%;
-  text-align: center;
-}
-
 .wholeBody {
   padding: 0;
-}
-.btn {
-  background-color: white;
-  color: #82260e !important;
-  border: none;
-}
-.btn:hover {
-  color: white !important;
-  background-color: #295406;
 }
 
 .carousel-3d-container {

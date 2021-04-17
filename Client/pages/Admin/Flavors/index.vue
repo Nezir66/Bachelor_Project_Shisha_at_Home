@@ -9,9 +9,10 @@
             <br />
             <hr />
             <div style="margin-top: 60px">
-              <label>
+              <label for="flavor">
                 <input
                   type="text"
+                  id="flavor"
                   class="form-control"
                   placeholder="Geschmack"
                   v-model="flavor"
@@ -21,6 +22,7 @@
               <label for="description">
                 <textarea
                   type="text"
+                  id="description"
                   class="form-control"
                   placeholder="Beschreibung"
                   v-model="description"

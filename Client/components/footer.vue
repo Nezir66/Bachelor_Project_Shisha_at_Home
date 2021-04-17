@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="logo">
-            <a href="#home"
+            <a href="#main"
               ><img
                 src="/images/Logo_Shisha_at_Home.png"
                 height="80"
@@ -56,10 +56,18 @@
             <form>
               <fieldset>
                 <div class="field">
-                  <input type="email" name="mail" placeholder="E-mail" />
+                  <label for="newsletter" class="label-hide">Newsletter</label>
+                  <input
+                    type="email"
+                    id="newsletter"
+                    name="mail"
+                    placeholder="E-mail"
+                  />
                 </div>
                 <div class="field">
-                  <button class="submit_bt">Bestätigen</button>
+                  <button class="btn extra" style="margin-top: 5%">
+                    Bestätigen
+                  </button>
                 </div>
               </fieldset>
             </form>
@@ -73,16 +81,12 @@
           </div>
           <div class="distance f_menu">
             <ul>
-              <li><a href="#home" aria-label="Nach oben gelangen">Home</a></li>
+              <li><a href="#main" aria-label="Nach oben gelangen">Home</a></li>
               <li>
-                <router-link to="/Transaction/Offer/products" href="#"
-                  >Impressum</router-link
-                >
+                <router-link to="#" href="#">Impressum</router-link>
               </li>
               <li>
-                <router-link to="/Transaction/tutorial" href="#"
-                  >AGB</router-link
-                >
+                <router-link to="#" href="#">AGB</router-link>
               </li>
               <li><a href="#testimonial">Über uns</a></li>
             </ul>

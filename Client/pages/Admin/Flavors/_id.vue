@@ -7,27 +7,30 @@
         <br />
         <hr />
         <div style="margin-top: 20px">
-          <label>
+          <label for="flavor">
             <input
               type="text"
+              id="flavor"
               class="input-flavor"
               v-model="flavor"
               :placeholder="singleFlavor.flavor"
             />
           </label>
           <br />
-          <label>
+          <label for="description">
             <textarea
               type="text"
+              id="description"
               class="input-flavor"
               v-model="description"
               :placeholder="singleFlavor.description"
             ></textarea>
           </label>
           <br />
-          <label>
+          <label for="price">
             <input
               type="number"
+              id="price"
               class="input-flavor"
               v-model="price"
               :placeholder="singleFlavor.price"

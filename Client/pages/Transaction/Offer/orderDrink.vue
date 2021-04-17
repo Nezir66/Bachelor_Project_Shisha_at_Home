@@ -62,11 +62,6 @@ export default {
 </script>
 
 <style scoped>
-.sliderDrink {
-  background-color: #82260e;
-  padding: 5%;
-  text-align: center;
-}
 .sliderDrink:focus {
   border: 2px solid black;
 }
@@ -75,13 +70,7 @@ export default {
   padding: 0;
 }
 .btn {
-  background-color: white;
-  color: #82260e !important;
   border: none;
-}
-.btn:hover {
-  color: white !important;
-  background-color: #295406;
 }
 </style>
 

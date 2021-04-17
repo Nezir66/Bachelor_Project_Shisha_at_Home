@@ -5,6 +5,9 @@ export const state = () => ({
     totalPrice: 0,
     totalProduct: 0,
     login: false,
+    _loggedIn: false,
+    name: null,
+    red: "",
   });
   
   export const actions = {
@@ -63,6 +66,10 @@ export const state = () => ({
     changeLogToTrue(state) {
       state.login = true;
     },
+    setLogInState(state, logStatus, name){
+      state._loggedIn = logStatus;
+      state.name = name;
+    }
   };
   
   export const getters = {

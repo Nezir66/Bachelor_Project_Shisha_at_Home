@@ -1,9 +1,10 @@
 <template>
   <body class="top_section cross_layout">
-    <nav>
+    <nav class="nav-main">
+      <a href="#main" class="go-content">Zum Inhalt gelangen</a>
       <input type="checkbox" id="click" />
       <label for="click" class="menu-btn">
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars" style="transform: scale(2);"></i>
       </label>
       <ul>
         <li>
@@ -40,11 +41,6 @@
           >
         </li>
         <li>
-          <router-link to="/Transaction/tutorial" href="#"
-            >Erklärung</router-link
-          >
-        </li>
-        <li>
           <router-link
             to="/Account/profil"
             v-if="$auth.$state.loggedIn == true"
@@ -53,56 +49,84 @@
             >Profil</router-link
           >
         </li>
-        <li><router-link to="/Account/signIn" href="#" v-if="$auth.$state.loggedIn == false">Einloggen</router-link></li>
-        <li><a
-                href="#"
-                v-show="$auth.$state.loggedIn == true"
-                @click="logOut()"
-              >
-                Ausloggen
-              </a></li>
+        <li>
+          <router-link to="/Account/signUp" href="#"
+          v-if="$auth.$state.loggedIn == false"
+            >Registrieren</router-link
+          >
+        </li>
+        <li>
+          <router-link
+            to="/Account/signIn"
+            href="#"
+            v-if="$auth.$state.loggedIn == false"
+            >Einloggen</router-link
+          >
+        </li>
+        <li>
+          <a href="#" v-show="$auth.$state.loggedIn == true" @click="logOut()">
+            Ausloggen
+          </a>
+        </li>
       </ul>
+      <button type="button" @click="toggleTheme()" class="btn btn-dark">{{ mode }}</button>
+      <router-link
+        to="/Transaction/cart"
+        class="text-center header-content header-all"
+        style="margin-top: -20px"
+        :aria-label="
+          'Gesamtprodukte im Einkaufswagen ' + $store.state.totalProduct
+        "
+      >
+        {{ $store.state.totalProduct }}
+        <br />
+        <i class="fa fa-shopping-cart" style="transform: scale(2.5)"></i>
+      </router-link>
     </nav>
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-        <slot style="margin-top:200px;"></slot>
-        </div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+    <div id="main" class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <slot style="margin-top: 200px"></slot>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
     </div>
-    
   </body>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      index: 0,
+      mode: "light"
+    };
+  },
   methods: {
     async logOut() {
       await this.$auth.logout();
       this.$router.go(0);
+    },
+    changeIndex() {
+      this.index = 1;
+    },
+    toggleTheme() {
+            this.theme = this.theme == 'darkMode' ? '' : 'darkMode'; //toggles theme value
+            this.mode = this.mode == 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', this.theme); // sets the data-theme attribute
+            localStorage.setItem('theme', this.theme); // stores theme value on local storage
     }
   },
 };
 </script>
 
 <style scopped>
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-nav {
-  display: flex;
-  height: 80px;
-  width: 100%;
-  background: linear-gradient(90deg, rgba(0,0,0,0.2),rgba(130,38,14,0.5),rgba(0,0,0,0.2));
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 50px 0 100px;
-  flex-wrap: wrap;
-}
+
 nav .logo {
   color: #fff;
   font-size: 35px;
@@ -117,8 +141,8 @@ nav ul {
 nav ul li {
   margin: 0 5px;
 }
-nav ul li a{
-  color: #f2f2f2;
+nav ul li a {
+  color: var(--text-color-body) !important;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
@@ -127,14 +151,8 @@ nav ul li a{
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
-nav ul li a.active,
-nav ul li a:hover,
-nav ul li a:focus {
-  color: #82260e;
-  background: #fff;
-}
 nav .menu-btn i {
-  color: #fff;
+  color: var(--text-color-body) !important;
   font-size: 22px;
   cursor: pointer;
   display: none;
@@ -150,7 +168,7 @@ input[type="checkbox"] {
 }
 @media (max-width: 920px) {
   nav {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
   }
 
   nav .menu-btn i {
@@ -163,7 +181,7 @@ input[type="checkbox"] {
     position: fixed;
     top: 80px;
     left: -100%;
-    background:  #82260e;
+    background: #82260e;
     height: 100vh;
     width: 100%;
     text-align: center;

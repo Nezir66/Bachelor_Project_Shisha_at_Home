@@ -11,72 +11,88 @@
               </h1>
               <hr />
               <div class="row">
+                <label for="userName" class="label-hide">Benutzername</label>
                 <input
                   type="text"
                   id="userName"
                   class="form-control"
                   placeholder="Benutzername"
                   v-model="name"
+                  required
                 />
+                <label for="inputEmail" class="label-hide">Email</label>
                 <input
                   type="email"
                   id="inputEmail"
                   class="form-control"
                   placeholder="Email Adresse"
                   v-model="email"
+                  required
                 />
               </div>
               <div class="row">
+                <label for="inputPassword" class="label-hide">Passwort</label>
                 <input
                   type="password"
                   id="inputPassword"
                   class="form-control"
                   placeholder="Passwort"
                   v-model="password"
+                  required
                 />
+                <label for="firstName" class="label-hide">Vorname</label>
                 <input
                   id="firstName"
                   type="text"
                   class="form-control"
                   v-model="firstName"
                   placeholder="Vorname"
+                  required
                 />
               </div>
               <div class="row">
+                <label for="lastName" class="label-hide">Nachname</label>
                 <input
                   id="lastName"
                   type="text"
                   class="form-control"
                   v-model="lastName"
                   placeholder="Nachname"
+                  required
                 />
+                <label for="address" class="label-hide">Addresse</label>
                 <input
                   id="address"
                   type="text"
                   class="form-control"
                   v-model="address"
                   placeholder="Adresse"
+                  required
                 />
               </div>
               <div class="row">
+                <label for="plz" class="label-hide">Postleitzahl</label>
                 <input
                   id="plz"
                   type="text"
                   class="form-control"
                   v-model="plz"
                   placeholder="PLZ"
+                  required
                 />
+                <label for="city" class="label-hide">Ort</label>
                 <input
                   id="city"
                   type="text"
                   class="form-control"
                   v-model="city"
                   placeholder="Ort"
+                  required
                 />
               </div>
               <hr />
               <button
-                class="btn btn-lg btn-primary btn-block"
+                class="btn btn-lg btn-block"
                 @click="signUpUser()"
                 @keyup.enter="signUpUser()"
               >
@@ -145,7 +161,9 @@ export default {
               email: this.email,
               password: this.password,
             },
-          });
+          }).then(()=>{
+          this.$router.go(0);
+        });
         }
       } catch (err) {
         console.log(err);
@@ -160,26 +178,7 @@ export default {
   margin: auto;
   margin-top: 40px;
 }
-.form-signup {
-  width: 100%;
-  max-width: 700px;
-  padding: 15px;
-  margin: auto;
-  margin-top: 11%;
-  margin-bottom: 5%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
-}
-.btn {
-  background-color: white;
-  color: #82260e;
-  border: 0;
-}
 
-.btn:hover {
-  background-color: #295406;
-  color: white;
-}
 
 .link {
   color: white;

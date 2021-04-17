@@ -1,7 +1,7 @@
 <template>
   <navbar>
     <div class="shopping-cart">
-      <h1 style="color: white" tabindex="0">Einkaufswagen</h1>
+      <h1 tabindex="0">Einkaufswagen</h1>
       <hr />
       <div class="column-labels">
         <label class="product-details">Product</label>
@@ -29,7 +29,7 @@
           <a class="product-title" v-else-if="product.drink">{{
             product.drink
           }}</a>
-          <div class="product-description">{{ product.description }}</div>
+          <p class="product-description">{{ product.description }}</p>
         </div>
         <a
           href="#"
@@ -89,9 +89,11 @@
       <router-link
         to="/Transaction/Payment/dataCheckUser"
         v-show="$store.state.cart.length > 0"
-        class="checkout"
+        
       >
+      <button class="checkout">
         Bezahlen
+      </button>
       </router-link>
       <button
         class="checkout"
@@ -212,14 +214,6 @@ label {
   color: white;
 }
 
-.shopping-cart {
-  background-color: #82260e;
-  color: white;
-  padding: 5%;
-  box-shadow: 0 0 5px 5px white;
-  margin-top:7%;
-}
-
 /* Column headers */
 .column-labels label {
   padding-bottom: 15px;
@@ -251,6 +245,7 @@ label {
   color: white;
   margin: 5px 20px 5px 0;
   line-height: 1.4em;
+  font-size: 16px;
 }
 .product .product-quantity input {
   width: 40px;
@@ -258,19 +253,17 @@ label {
 .product .remove-product {
   border: 0;
   padding: 4px 8px;
-  background-color: white;
-  color: #82260e;
   font-size: 12px;
   border-radius: 3px;
 }
 .product .remove-product:hover {
-  background-color: #295406;
-  color: white;
+  background-color: #295406!important;
+  color: white!important;
 }
 
 .product .remove-product:focus {
-  background-color: #295406;
-  color: white;
+  background-color: #295406!important;
+  color: white!important;
 }
 /* Totals section */
 .totals .totals-item {
@@ -297,27 +290,15 @@ label {
   width: 21%;
   text-align: right;
 }
-.checkout {
-  display: inline-block;
-  text-align:center;
-  width: 48%;
-  border: 0;
-  margin-top: 20px;
-  margin-left: 15px;
-  padding: 6px 25px;
-  background-color: white;
-  color: #82260e;
-  border-radius: 3px;
-}
 
 .checkout:hover {
-  background-color: #295406;
-  color: white;
+  background-color: #295406!important;
+  color: white!important;
 }
 
 .checkout:focus {
-  background-color: #295406;
-  color: white;
+  background-color: #295406!important;
+  color: white!important;
 }
 
 @media screen and (max-width: 650px) {

@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xl-2 col-lg-2 col-sm-1 col-xs-1"></div>
         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-10 col-xs-10">
-          <div class="profil fontColor">
+          <div class="dataCheck fontColor">
             <h1 class="center" style="color: white" tabindex="0">
               Persönliche Daten
             </h1>
@@ -57,42 +57,13 @@ export default {
 </script>
 
 <style scopped>
-.changeData {
-  width: 100%;
-  max-width: 500px;
-  padding: 15px;
-  margin: auto;
-  margin-top: 2%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
-}
-
-.profil {
-  padding: 15px;
-  margin: auto;
-  margin-top: 11%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
-}
 
 .btn {
-  background-color: white;
-  color: #82260e;
-  border: 0;
   float: right;
   margin-top: -30px;
 }
 
-.btn:hover {
-  background-color: #295406;
-  color: white;
-}
-
 .link {
-  color: white;
-}
-
-.fontColor {
   color: white;
 }
 

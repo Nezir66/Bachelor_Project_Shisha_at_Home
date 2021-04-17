@@ -89,6 +89,10 @@
     right: 0;
   }
 
+  .nav-main{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   .full.slider_cont_section {
     padding-top: 50px;
     padding-left: 20px;
@@ -161,6 +165,9 @@
     box-shadow: 0 0 5px 5px white;
     margin-top: 20%;
   }
+  .go-content{
+    visibility: hidden;
+  }
 }
 
 /**-- big tablet --**/
@@ -169,6 +176,10 @@
   .footer-bottom {
     margin-right: 12%;
     margin-left: 12%;
+  }
+  .nav-main{
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .contact {
     margin: auto;
@@ -301,6 +312,9 @@
   #container-whole {
     padding: 0;
   }
+  .go-content{
+    visibility: hidden;
+  }
 }
 
 /**-- verticle mobile --**/
@@ -310,6 +324,10 @@
     margin: auto;
   }
 
+  .nav-main{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   .logo {
     text-align: center;
   }
@@ -606,6 +624,9 @@
   #container-whole {
     padding: 0;
   }
+  .go-content{
+    visibility: hidden;
+  }
 }
 
 /**-- mpbile orginal --**/
@@ -614,6 +635,12 @@
   .logo {
     text-align: center;
   }
+
+  .nav-main{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   header {
     background: transparent;
     min-height: 122px;
@@ -891,10 +918,19 @@
   #container-whole {
     padding: 0;
   }
+  .go-content{
+    visibility: hidden;
+  }
 
-  @media (max-width: 575px) and (min-height: 681px) {
-    .cross_layout {
-      min-height: 740px;
-    }
+}
+
+@media (max-width: 575px) and (min-height: 681px) {
+  .cross_layout {
+    min-height: 740px;
+  }
+
+  .nav-main{
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }

@@ -1,7 +1,5 @@
 <template>
-  <body class="main-layout">
-    <div class="wrapper">
-      <div id="content">
+  <body>
         <navbar>
           <section>
             <div class="container-fluid">
@@ -80,7 +78,7 @@
         <!-- end section -->
 
         <!-- section -->
-        <div class="section layout_padding padding_top_0 bottom-drink-section">
+        <div class="section layout_padding padding_top_0 bottom-drink-section dark_bg_orange">
           <div class="container">
             <div class="row">
               <div class="col-lg-8">
@@ -132,12 +130,7 @@
                 <div class="full">
                   <div class="choose_blog text_align_center" tabindex="0">
                     <i
-                      class="fa fa-cart-arrow-down"
-                      style="
-                        transform: scale(5);
-                        color: white;
-                        margin-bottom: 50px;
-                      "
+                      class="fa fa-cart-arrow-down icon-how-to"
                     ></i>
                     <br />
                     <h3 aria-label="Erstens Bestellung aufgeben.">
@@ -154,12 +147,7 @@
                 <div class="full">
                   <div class="choose_blog text_align_center" tabindex="0">
                     <i
-                      class="fa fa-hourglass-start"
-                      style="
-                        transform: scale(5);
-                        color: white;
-                        margin-bottom: 50px;
-                      "
+                      class="fa fa-hourglass-start icon-how-to"
                     ></i>
                     <h3 aria-label="Zweitens Vorbereitung.">Vorbereitung</h3>
                     <p>
@@ -174,12 +162,7 @@
                 <div class="full">
                   <div class="choose_blog text_align_center" tabindex="0">
                     <i
-                      class="fa fa-flag-checkered"
-                      style="
-                        transform: scale(5);
-                        color: white;
-                        margin-bottom: 50px;
-                      "
+                      class="fa fa-flag-checkered icon-how-to"
                     ></i>
                     <h3 aria-label="Drittens Ankunft.">Ankunft</h3>
                     <p>
@@ -243,7 +226,7 @@
                           </div>
                           <div class="testimonial_cont text_align_center">
                             <p class="p-black" tabindex="0">
-                              <strong>Nezir Basar</strong><br /><strong
+                              <strong style="color:black;">Nezir Basar</strong><br /><strong
                                 class="orange_color"
                                 >Student</strong
                               ><br /><br /><i
@@ -287,17 +270,20 @@
               <div class="contact col-md-6">
                 <div class="full">
                   <div class="contact_form">
-                    <form>
+                    <form action="mailto:Nezirbasar@outlook.com" method="post" enctype="text/plain">
                       <fieldset class="row">
                         <div class="col-md-12">
                           <div class="field">
-                            <input type="text" placeholder="Name" name="name" />
+                            <label for="name" class="label-hide">Name</label>
+                            <input type="text" id="name" placeholder="Name" name="name" />
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="field">
+                            <label for="email" class="label-hide">Email</label>
                             <input
                               type="email"
+                              id="email"
                               placeholder="E-mail"
                               name="email"
                             />
@@ -305,8 +291,10 @@
                         </div>
                         <div class="col-md-12">
                           <div class="field">
+                            <label for="number" class="label-hide">Nummer</label>
                             <input
                               type="text"
+                              id="number"
                               placeholder="Nummer"
                               name="number"
                             />
@@ -314,7 +302,9 @@
                         </div>
                         <div class="col-md-12">
                           <div class="field">
+                            <label for="message" class="label-hide">Nachricht</label>
                             <textarea
+                              id="message"
                               placeholder="Nachricht"
                               aria-label="Ihre Nachricht"
                             ></textarea>
@@ -322,7 +312,7 @@
                         </div>
                         <div class="col-md-12">
                           <div class="center">
-                            <button class="submit_bt">Senden</button>
+                            <button type="submit" class="btn extra">Senden</button>
                           </div>
                         </div>
                       </fieldset>
@@ -334,8 +324,6 @@
           </div>
         </section>
         <!-- end section -->
-      </div>
-    </div>
   </body>
 </template>
 
@@ -344,34 +332,26 @@ import Navbar from "~/components/mainNavbar.vue";
 export default {
   data() {
     return {
-      sidebarOpen: false,
-    };
+      theme: '',
+    }
   },
   components: {
     navbar: Navbar,
-  },
-  methods: {
-    showSidebar() {
-      this.sidebarOpen = !this.sidebarOpen;
-    },
-  },
-  created() {
-    if (
-      this.$store.state.login == false &&
-      this.$store.state.auth.loggedIn == true
-    ) {
-      this.$store.commit("changeLogToTrue");
-      this.$router.go(0);
-    }
-  },
-  mounted() {
-    this.$store.commit("changeLogToFalse");
-  },
+  }
+  // created() {
+  //   if (
+  //     this.$store.state.login == false &&
+  //     this.$store.state.auth.loggedIn == true
+  //   ) {
+  //     this.$store.commit("changeLogToTrue");
+  //     this.$router.go(0);
+  //   }
+  // },
+  // mounted() {
+  //   this.$store.commit("changeLogToFalse");
+  // },
 };
 </script>
 
 <style scoped>
-.p-black {
-  color: black !important;
-}
 </style>

@@ -184,17 +184,6 @@ export default {
   background-color: #fefde5 !important;
 }
 
-.btn {
-  background-color: white;
-  color: #82260e;
-  border: 0;
-}
-
-.btn:hover {
-  background-color: #295406;
-  color: white;
-}
-
 .font-color {
   color: white;
   margin-left: auto;
@@ -203,14 +192,6 @@ export default {
 
 p {
   color: white;
-}
-
-.payment {
-  padding: 15px;
-  margin: auto;
-  margin-top: 2%;
-  background-color: #82260e;
-  box-shadow: 0 0 5px 5px white;
 }
 
 img:focus {
